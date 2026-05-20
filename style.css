@@ -1,0 +1,2497 @@
+/* ========================= */
+/* 기본 설정 */
+/* ========================= */
+
+*{
+
+  margin:0;
+  padding:0;
+
+  box-sizing:border-box;
+
+  font-family:
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  sans-serif;
+
+}
+
+body{
+
+  background:#f5f6f3;
+
+  color:#111;
+
+  margin:0;
+
+}
+
+button{
+
+  border:none;
+
+  background:none;
+
+  appearance:none;
+  -webkit-appearance:none;
+
+  cursor:pointer;
+
+}
+
+/* ========================= */
+/* 앱 */
+/* ========================= */
+
+.app{
+
+  max-width:430px;
+
+  margin:0 auto;
+
+}
+
+/* ========================= */
+/* 상단 */
+/* ========================= */
+
+.top-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:18px;
+
+padding-top:4px;
+
+}
+
+.top-header h1{
+
+  font-size:42px;
+
+  font-weight:800;
+
+}
+
+.bell-btn{
+
+  width:48px;
+  height:48px;
+
+  border-radius:50%;
+
+  background:#fff;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  box-shadow:
+  0 4px 18px rgba(0,0,0,0.04);
+
+margin-top:-6px;
+
+}
+
+.bell-btn svg{
+
+  width:22px;
+  height:22px;
+
+  color:#168845;
+
+}
+
+/* ========================= */
+/* 공통 카드 */
+/* ========================= */
+
+.profile-card,
+.work-card,
+.vacation-card,
+.weekly-card{
+
+  background:#fff;
+
+  border-radius:34px;
+
+  padding:26px 24px;
+
+  margin-bottom:18px;
+
+  box-shadow:
+  0 4px 20px rgba(0,0,0,0.04);
+
+}
+
+/* ========================= */
+/* 홈 프로필 카드 */
+/* ========================= */
+
+.profile-card{
+
+  display:grid;
+
+  grid-template-columns:
+1fr
+0.8fr
+0.8fr;
+
+  gap:6px;
+
+  align-items:center;
+
+  background:#fff;
+
+  border-radius:30px;
+
+  padding:18px 14px;
+
+  margin-bottom:18px;
+
+  box-shadow:
+  0 4px 20px rgba(0,0,0,0.04);
+
+}
+
+/* ========================= */
+/* 좌측 */
+/* ========================= */
+
+.profile-left{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  min-width:0;
+
+}
+
+/* 프로필 이미지 */
+
+.profile-image{
+
+  width:46px;
+  height:46px;
+
+  border-radius:50%;
+
+  background:#edf7ef;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+
+}
+
+.profile-image svg{
+
+  width:20px;
+  height:20px;
+
+  color:#168845;
+
+}
+
+/* 텍스트 */
+
+.profile-info{
+
+  min-width:0;
+
+}
+
+/* 부서 */
+
+.department{
+
+  font-size:9px;
+
+  color:#168845;
+
+  margin-bottom:4px;
+
+  white-space:nowrap;
+
+}
+
+/* 이름 */
+
+.name{
+
+  font-size:11px;
+
+  font-weight:700;
+
+  margin-bottom:6px;
+
+  white-space:nowrap;
+
+}
+
+/* ========================= */
+/* 가운데 / 우측 */
+/* ========================= */
+
+.profile-middle,
+.profile-right{
+
+  border-left:
+  1px solid #ececec;
+
+  padding-left:10px;
+
+  min-width:0;
+
+}
+
+/* 라벨 */
+
+.label{
+
+  font-size:10px;
+
+  color:#777;
+
+  margin-bottom:8px;
+
+  white-space:nowrap;
+
+top:3px;
+
+}
+
+/* 시급 */
+
+.hour-pay{
+
+  font-size:15px;
+
+  font-weight:700;
+
+  color:#168845;
+
+  margin-bottom:5px;
+
+  white-space:nowrap;
+
+}
+
+/* 서브 */
+
+.sub-text{
+
+  font-size:9px;
+
+  color:#999;
+
+  line-height:1.2;
+
+  white-space:nowrap;
+
+}
+
+/* 목표 */
+
+.goal{
+
+  font-size:10px;
+
+  color:#168845;
+
+  margin-bottom:5px;
+
+  white-space:nowrap;
+
+}
+
+/* 디데이 */
+
+.dday{
+
+  font-size:24px;
+
+  font-weight:800;
+
+  color:#168845;
+
+  line-height:1;
+
+  white-space:nowrap;
+
+}
+
+/* ========================= */
+/* 이번주 근무현황 */
+/* ========================= */
+
+.weekly-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:24px;
+
+}
+
+.weekly-title{
+
+  font-size:24px;
+
+  font-weight:800;
+
+}
+
+.more-btn{
+
+  font-size:14px;
+
+  color:#888;
+
+}
+
+/* 콘텐츠 */
+
+.weekly-content{
+
+  display:grid;
+
+  grid-template-columns:
+  1fr 1fr;
+
+}
+
+/* 박스 */
+
+.weekly-box{
+
+  display:flex;
+
+  gap:16px;
+
+  padding:0 10px;
+
+}
+
+.weekly-box:first-child{
+
+  border-right:
+  1px solid #ececec;
+
+transform:translateX(5px);
+
+}
+
+/* 아이콘 */
+
+.weekly-icon{
+
+  width:60px;
+  height:60px;
+
+  border-radius:50%;
+
+  background:#edf7ef;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+
+}
+
+.weekly-icon svg{
+
+  width:24px;
+  height:24px;
+
+  color:#168845;
+
+}
+
+/* 텍스트 */
+
+.weekly-label{
+
+  font-size:13px;
+
+  color:#666;
+
+  margin-bottom:4px;
+
+}
+
+.weekly-main{
+
+  font-size:22px;
+
+  font-weight:800;
+
+  color:#168845;
+
+  margin-bottom:4px;
+
+}
+
+.weekly-sub{
+
+  font-size:13px;
+
+  color:#888;
+
+}
+
+/* ========================= */
+/* 하단탭 */
+/* ========================= */
+
+.bottom-nav{
+
+  position:fixed;
+
+  bottom:0;
+  left:0;
+
+  width:100%;
+
+  background:#fff;
+
+  border-top:
+  1px solid #ececec;
+
+  display:flex;
+
+  justify-content:space-around;
+
+  padding:14px 0 26px;
+
+}
+
+/* 탭 */
+
+.nav-item{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  gap:6px;
+
+  color:#9a9a9a;
+
+  font-size:12px;
+
+}
+
+/* 활성 */
+
+.nav-item.active{
+
+  color:#168845;
+
+  font-weight:800;
+
+}
+
+.nav-item svg{
+
+  width:22px;
+  height:22px;
+
+}
+/* ========================= */
+/* 모바일 전체 정렬 안정화 */
+/* ========================= */
+
+/* 전체 카드 */
+
+.profile-card,
+.work-card,
+.vacation-card,
+.weekly-card{
+
+  width:100%;
+
+  overflow:hidden;
+
+}
+
+/* ========================= */
+/* 프로필 카드 */
+/* ========================= */
+
+.profile-card{
+
+  grid-template-columns:
+  1.2fr
+  0.9fr
+  0.9fr;
+
+  gap:14px;
+
+  padding:24px 20px;
+
+}
+
+/* 프로필 좌측 */
+
+.profile-left{
+
+  min-width:0;
+
+}
+
+/* 이름 */
+
+.name{
+
+  font-size:18px;
+
+  line-height:1.2;
+
+  word-break:keep-all;
+
+}
+
+/* 시급 */
+
+.hour-pay{
+
+  font-size:20px;
+
+  line-height:1.2;
+
+  word-break:keep-all;
+
+}
+
+/* DDAY */
+
+.dday{
+
+  font-size:36px;
+
+  line-height:1;
+
+  white-space:nowrap;
+
+}
+
+/* 목표명 */
+
+.goal{
+
+  font-size:14px;
+
+  line-height:1.2;
+
+  word-break:keep-all;
+
+}
+
+/* ========================= */
+/* 이번주 근무현황 */
+/* ========================= */
+
+.weekly-card{
+
+  padding:24px 18px;
+
+}
+
+/* 상단 */
+
+.weekly-header{
+
+  margin-bottom:18px;
+
+}
+
+/* 제목 */
+
+.weekly-title{
+
+  font-size:16px;
+
+  line-height:1.2;
+
+transform:
+translateY(-4px)
+translateX(5px);
+
+}
+
+/* 전체보기 */
+
+.more-btn{
+
+  font-size:12px;
+
+  white-space:nowrap;
+
+transform:translateY(-8px);
+
+}
+
+/* 콘텐츠 */
+
+.weekly-content{
+
+  gap:10px;
+
+}
+
+/* 박스 */
+
+.weekly-box{
+
+  gap:12px;
+
+  padding:0 4px;
+
+  min-width:0;
+
+}
+
+/* 메인 텍스트 */
+
+.weekly-main{
+
+  font-size:16px;
+
+  line-height:1.2;
+
+  white-space:nowrap;
+
+}
+
+/* 라벨 */
+
+.weekly-label,
+.weekly-sub{
+
+  font-size:11px;
+
+  line-height:1.2;
+
+  white-space:nowrap;
+
+}
+
+/* ========================= */
+/* 하단탭 */
+/* ========================= */
+
+.bottom-nav{
+
+  padding:12px 0 22px;
+
+}
+
+/* 탭 */
+
+.nav-item{
+
+  font-size:11px;
+
+  gap:4px;
+
+}
+
+/* SVG */
+
+.nav-item svg{
+
+  width:20px;
+  height:20px;
+
+}
+/* ========================= */
+/* 상단 프로필 카드 정렬 */
+/* ========================= */
+
+.profile-card{
+
+  grid-template-columns:
+  1.25fr
+  0.9fr
+  0.9fr;
+
+  gap:10px;
+
+  padding:22px 18px;
+
+  align-items:center;
+
+}
+
+/* 좌측 */
+
+.profile-left{
+
+  gap:10px;
+
+  min-width:0;
+
+}
+
+/* 프로필 아이콘 */
+
+.profile-image{
+
+  width:58px;
+  height:58px;
+
+  min-width:58px;
+
+}
+
+.profile-image svg{
+
+  width:26px;
+  height:26px;
+
+}
+
+/* 부서 */
+
+.department{
+
+  font-size:11px;
+
+  margin-bottom:4px;
+
+  white-space:nowrap;
+
+}
+
+/* 이름 */
+
+.name{
+
+  font-size:16px;
+
+  margin-bottom:6px;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+}
+
+/* 시급 / 디데이 */
+
+.profile-middle,
+.profile-right{
+
+  padding-left:12px;
+
+  min-width:0;
+
+}
+
+/* 라벨 */
+
+.label{
+
+  font-size:11px;
+
+  margin-bottom:10px;
+
+  white-space:nowrap;
+
+}
+
+/* 시급 */
+
+.hour-pay{
+
+  font-size:16px;
+
+  margin-bottom:6px;
+
+  white-space:nowrap;
+
+}
+
+/* 기본시급 */
+
+.sub-text{
+
+  font-size:10px;
+
+  line-height:1.2;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+}
+
+/* 목표 */
+
+.goal{
+
+  font-size:11px;
+
+  margin-bottom:6px;
+
+  white-space:nowrap;
+
+}
+
+/* 디데이 */
+
+.dday{
+
+  font-size:28px;
+
+  line-height:1;
+
+  letter-spacing:-1px;
+
+  white-space:nowrap;
+
+}
+/* ========================= */
+/* 프로필 영역 */
+/* ========================= */
+
+/* 부서 */
+
+.department{
+
+  font-size:9px;
+
+  margin-bottom:3px;
+
+}
+
+/* 이름 */
+
+.name{
+
+  font-size:9px;
+
+  margin-bottom:5px;
+
+}
+
+/* ========================= */
+/* 이번주 근무현황 */
+/* ========================= */
+
+.weekly-content{
+
+  display:grid;
+
+  grid-template-columns:
+  1fr 1fr;
+
+  gap:8px;
+
+}
+
+/* 박스 */
+
+.weekly-box{
+
+  gap:10px;
+
+  padding:0 6px;
+
+  min-width:0;
+
+}
+
+/* 아이콘 */
+
+.weekly-icon{
+
+  width:48px;
+  height:48px;
+
+  min-width:48px;
+
+transform:translateX(-10px);
+
+}
+
+/* 텍스트 영역 */
+
+.weekly-info{
+
+  min-width:0;
+
+text-align:center;
+
+}
+
+/* 메인 */
+
+.weekly-main{
+
+  font-size:14px;
+
+  white-space:nowrap;
+
+}
+
+/* 라벨 */
+
+.weekly-label{
+
+  font-size:10px;
+
+  white-space:nowrap;
+
+  align-items:center;
+
+}
+
+.weekly-sub{
+
+  font-size:10px;
+
+  white-space:nowrap;
+}
+/* ========================= */
+/* 상단 프로필 카드 간격 정리 */
+/* ========================= */
+
+.profile-card{
+
+  display:grid;
+
+  grid-template-columns:
+  1.2fr
+  0.9fr
+  0.9fr;
+
+  gap:6px;
+
+  padding:18px 14px;
+
+  align-items:center;
+
+}
+
+/* ========================= */
+/* 좌측 */
+/* ========================= */
+
+.profile-left{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  min-width:0;
+
+}
+
+/* 프로필 아이콘 */
+
+.profile-image{
+
+  width:54px;
+  height:54px;
+
+  min-width:54px;
+
+}
+
+/* 텍스트 */
+
+.profile-info{
+
+  min-width:0;
+
+}
+
+/* 부서 */
+
+.department{
+
+  font-size:9px;
+
+  line-height:1.2;
+
+  margin-bottom:3px;
+
+  white-space:nowrap;
+
+}
+
+/* 이름 */
+
+.name{
+
+  font-size:13px;
+
+  line-height:1.2;
+
+  margin-bottom:5px;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+}
+
+/* ========================= */
+/* 시급 / DDAY */
+/* ========================= */
+
+.profile-middle,
+.profile-right{
+
+  padding-left:10px;
+
+  min-width:0;
+
+}
+
+/* 라벨 */
+
+.label{
+
+  font-size:9px;
+
+  margin-bottom:8px;
+
+  white-space:nowrap;
+
+}
+
+/* 시급 */
+
+.hour-pay{
+
+  font-size:14px;
+
+  margin-bottom:5px;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+position:relative;
+
+top:-8px;
+
+}
+
+/* 기본시급 */
+
+.sub-text{
+
+  font-size:9px;
+
+  line-height:1.2;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+transform:translateY(-1px);
+
+}
+
+/* 목표 */
+
+.goal{
+
+  font-size:9px;
+
+  margin-bottom:5px;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+}
+
+/* DDAY */
+
+.dday{
+
+  font-size:24px;
+
+  line-height:1;
+
+  white-space:nowrap;
+
+}
+
+/* ========================= */
+/* 통장 잔고 */
+/* ========================= */
+
+.bank-card{
+
+  background:#fff;
+
+  border-radius:20px;
+
+  padding:14px 16px;
+
+  min-width:150px;
+
+  box-shadow:
+  0 4px 18px rgba(0,0,0,0.04);
+
+margin-top:8px;
+
+}
+
+/* 라벨 */
+
+.bank-label{
+
+  font-size:12px;
+
+  color:#888;
+
+  margin-bottom:4px;
+
+  margin-left:19px;
+
+}
+
+/* 금액라인 */
+
+.bank-money-wrap{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:6px;
+
+  padding-left:2px;
+
+}
+
+/* 아이콘 */
+
+.bank-money-wrap svg{
+
+  width:18px;
+  height:18px;
+
+  color:#168845;
+
+}
+
+/* 금액 */
+
+.bank-money{
+
+  font-size:20px;
+
+  font-weight:700;
+
+  color:#168845;
+
+  letter-spacing:-0.5px;
+
+  white-space:nowrap;
+
+}
+
+/* ========================= */
+/* 화면 전환 */
+/* ========================= */
+
+.home-screen{
+
+  display:block;
+
+}
+
+/* 통장 카드 */
+
+.bank-card{
+
+  background:#fff;
+
+  border-radius:20px;
+
+  padding:16px 18px;
+
+  min-width:150px;
+
+  box-shadow:
+  0 4px 18px rgba(0,0,0,0.04);
+
+justify-content:center;
+
+}
+
+/* 라벨 */
+
+.bank-label{
+
+  font-size:12px;
+
+  opacity:0.8;
+
+  margin-bottom:8px;
+
+margin-bottom:4px;
+
+padding-left:2px;
+
+}
+
+/* 금액 */
+
+.bank-money{
+
+  font-size:20px;
+
+  font-weight:700;
+
+  color:#168845;
+
+  letter-spacing:-0.5px;
+
+white-space:nowrap;
+
+}
+
+
+/* 통장 잔고 */
+
+.bank-money-wrap{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:6px;
+
+padding-left:2px;
+
+}
+
+.bank-money-wrap svg{
+
+  width:18px;
+  height:18px;
+
+  color:#168845;
+
+}
+
+/* ========================= */
+/* 공통 로고 */
+/* ========================= */
+
+.common-logo{
+
+  display:flex;
+
+  flex-direction:column;
+
+}
+
+/* Study Office */
+
+.common-logo-text{
+
+  font-size:20px;
+
+  font-weight:800;
+
+  letter-spacing:0.5px;
+
+  line-height:1;
+
+}
+
+/* HOME / OFFICE */
+
+.common-logo-sub{
+
+  margin-top:2px;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  color:#168845;
+
+  letter-spacing:2px;
+
+}
+
+/* 부서 / 닉네임 간격 정리 */
+
+.department{
+
+  font-size:9px !important;
+
+  line-height:1.2;
+
+  margin-bottom:4px;
+
+position:relative;
+
+top:1px;
+
+}
+
+.name{
+
+  font-size:10px !important;
+
+  line-height:1.2;
+
+  margin-bottom:4px;
+
+}
+
+/* 직급 + 닉네임 */
+
+.name-row{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:4px;
+
+  margin-bottom:5px;
+
+  white-space:nowrap;
+
+position:relative;
+
+top:3px;
+
+}
+
+/* 직급 */
+
+.position{
+
+  font-size:11px;
+
+  font-weight:600;
+
+  color:#111;
+
+}
+
+/* 닉네임 */
+
+.nickname{
+
+  font-size:13px;
+
+  font-weight:700;
+
+  color:#111;
+
+}
+
+/* ========================= */
+/* 홈 프로필 최종 수정 */
+/* ========================= */
+
+/* 부서 */
+
+.department{
+
+  font-size:9px !important;
+
+  line-height:1.2;
+
+  margin-bottom:4px;
+
+  position:relative;
+
+  top:2px;
+
+}
+
+/* 직급 + 닉네임 */
+
+.name-row{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:4px;
+
+  margin-bottom:4px;
+
+  white-space:nowrap;
+
+  position:relative;
+
+  top:3px;
+
+}
+
+/* 직급 */
+
+.position{
+
+  font-size:10px;
+
+  font-weight:600;
+
+  color:#666;
+
+  white-space:nowrap;
+
+}
+
+/* 닉네임 */
+
+.nickname{
+
+  font-size:12px;
+
+  font-weight:700;
+
+  color:#111;
+
+  white-space:nowrap;
+
+}
+
+/* 현재 시급 */
+
+.hour-pay{
+
+  font-size:14px !important;
+
+  font-weight:700;
+
+  color:#168845;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+  position:relative;
+
+transform:translateY(3px);
+
+}
+
+.current-pay-label{
+
+  position:relative;
+
+  top:-2px;
+
+}
+
+/* 주간근무시간 아이콘 */
+
+.weekly-work-icon{
+
+  transform:translateX(-8px);
+
+}
+
+/* 누적급여 아이콘 */
+
+.weekly-pay-icon{
+
+  transform:translateX(3px);
+
+}
+
+#saveWorkSetting{
+
+  width: 100%;
+
+  height: 44px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #168845;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+}
+
+#weeklyWorkTime{
+
+  transform:
+translateX(-5px)
+translateY(-1px);
+
+}
+
+#totalPayText{
+
+  transform:
+translateX(7px)
+translateY(-2px);
+
+}
+
+#weeklyWorkLabel{
+
+  transform: translateX(-10px);
+
+}
+
+#totalPayLabel{
+
+  transform: translateX(-9px);
+
+}
+
+#totalWorkInfo{
+
+  transform: 
+translateX(-12px);
+translateY(-15px);
+
+}
+
+#paySubText{
+
+  transform: 
+translateX(-11px);
+translateY(-15px);
+
+}
+
+#saveProfileSetting{
+
+  width: 100%;
+
+  height: 52px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: #168845;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  margin-top: 12px;
+
+}
+
+.store-wallet-card{
+
+  margin-top:24px;
+
+  background:#fff;
+
+  border-radius:24px;
+
+  padding:22px;
+
+  box-shadow:
+  0 4px 20px rgba(0,0,0,0.06);
+
+}
+
+.store-wallet-label{
+
+  font-size:14px;
+
+  color:#888;
+
+  margin-bottom:10px;
+
+}
+
+.store-wallet-money-wrap{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+}
+
+.store-wallet-money-wrap svg{
+
+  width:24px;
+
+  height:24px;
+
+  color:#168845;
+
+}
+
+.store-wallet-money{
+
+  font-size:32px;
+
+  font-weight:800;
+
+  color:#168845;
+
+}
+
+.store-wallet-card{
+
+  padding: 10px 14px;
+
+  border-radius: 16px;
+
+  min-width: 120px;
+
+}
+
+.store-wallet-label{
+
+  font-size: 11px;
+
+}
+
+.store-wallet-money-wrap{
+
+  gap: 6px;
+
+}
+
+.store-wallet-money{
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+}
+
+.screen-padding{
+
+  padding:
+  12px
+  24px
+  120px;
+
+}
+
+/* =========================
+   위시리스트 카드
+========================= */
+
+.wishlist-card{
+
+  background:#fff;
+
+  border-radius:24px;
+
+  padding:18px;
+
+  box-shadow:
+  0 4px 24px rgba(0,0,0,0.05);
+
+}
+
+/* 상단 */
+
+.wishlist-top{
+
+  display:flex;
+
+  justify-content:
+flex-start;
+
+  align-items:flex-start;
+
+  gap:16px;
+
+}
+
+/* 위시리스트 */
+
+.wishlist-label{
+
+  font-size:13px;
+
+  font-weight:700;
+
+  color:#168845;
+
+  margin-bottom:10px;
+
+}
+
+/* 상품명 */
+
+.wishlist-title{
+
+  font-size:20px;
+
+  font-weight:800;
+
+  line-height:1.25;
+
+  margin-bottom:8px;
+
+max-width: 100%;
+
+}
+
+/* 브랜드 */
+
+.wishlist-brand{
+
+  font-size:13px;
+
+  color:#888;
+
+}
+
+/* 이미지 */
+
+.wishlist-image{
+
+  width:84px;
+
+  object-fit:contain;
+
+}
+
+/* 달성률 */
+
+.wishlist-progress-wrap{
+
+  margin-top:20px;
+
+}
+
+/* 텍스트 */
+
+.wishlist-progress-text{
+
+  font-size:16px;
+
+  font-weight:700;
+
+  margin-bottom:12px;
+
+}
+
+.wishlist-progress-text span{
+
+  color:#168845;
+
+}
+
+/* 바 */
+
+.wishlist-progress-bar{
+
+  width:100%;
+
+  height:10px;
+
+  border-radius:999px;
+
+  background:#ececec;
+
+  overflow:hidden;
+
+}
+
+/* 채우기 */
+
+.wishlist-progress-fill{
+
+  width:68%;
+
+  height:100%;
+
+  background:#168845;
+
+  border-radius:999px;
+
+}
+
+/* 하단 */
+
+.wishlist-bottom{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  margin-top:12px;
+
+  border-top:
+  1px solid #f0f0f0;
+
+}
+
+/* 금액칸 */
+
+.wishlist-money-box{
+
+  padding-top:12px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  text-align:center;
+
+}
+
+/* 중앙선 */
+
+.wishlist-money-box:nth-child(2){
+
+  border-left:
+  1px solid #f0f0f0;
+
+  border-right:
+  1px solid #f0f0f0;
+
+}
+
+/* 라벨 */
+
+.wishlist-money-label{
+
+  font-size:12px;
+
+  color:#888;
+
+  margin-bottom:4px;
+
+}
+
+/* 금액 */
+
+.wishlist-money{
+
+  font-size:15px;
+
+  font-weight:800;
+
+  letter-spacing:-1px;
+
+}
+
+.wishlist-money.gray{
+
+  color:#777;
+
+}
+
+.wishlist-money.green{
+
+  color:#168845;
+
+}
+
+.wishlist-money-box{
+
+  padding-top:12px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  text-align:center;
+
+}
+
+/* =========================
+   스토어 카테고리
+========================= */
+
+.store-category-wrap{
+
+  display:flex;
+
+  gap:10px;
+
+  overflow-x:auto;
+
+  margin-top:18px;
+
+  padding-bottom:4px;
+
+  scrollbar-width:none;
+
+}
+
+/* 스크롤바 제거 */
+
+.store-category-wrap::-webkit-scrollbar{
+
+  display:none;
+
+}
+
+/* 카테고리 버튼 */
+
+.store-category{
+
+  flex-shrink:0;
+
+  height:38px;
+
+  padding:0 18px;
+
+  border:none;
+
+  border-radius:999px;
+
+  background:#ffffff;
+
+  color:#666;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  box-shadow:
+  0 4px 14px rgba(0,0,0,0.05);
+
+}
+
+/* 활성화 */
+
+.store-category.active{
+
+  background:#168845;
+
+  color:#fff;
+
+}
+
+/* =========================
+   상품 목록
+========================= */
+
+.store-product-list{
+
+  margin-top:18px;
+
+  flex-direction:column;
+
+  gap:14px;
+
+}
+
+/* 상품 카드 */
+
+.store-product-card{
+
+  background:#fff;
+
+  border-radius:22px;
+
+  box-shadow:
+  0 4px 18px rgba(0,0,0,0.05);
+
+}
+
+/* 상품명 */
+
+.store-product-name{
+
+  font-size:15px;
+
+  font-weight:700;
+
+  line-height:1.4;
+
+  margin-bottom:8px;
+
+}
+
+/* 가격 */
+
+.store-product-price{
+
+  font-size:18px;
+
+  font-weight:800;
+
+  color:#168845;
+
+}
+
+/* 버튼 영역 */
+
+.store-product-buttons{
+
+  display:flex;
+
+  gap:10px;
+
+  margin-top:16px;
+
+}
+
+/* 상품 태그 */
+.store-product-tag{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  height:22px;
+
+  padding:0 8px;
+
+  border-radius:10px;
+
+  background:#eef4ff;
+
+  color:#3b82f6;
+
+  font-size:11px;
+
+  font-weight:700;
+
+  margin-bottom:12px;
+
+}
+
+.profile-right{
+
+  position:relative;
+
+}
+
+/* 디데이 패널 */
+
+.dday-setting-btn{
+
+  position:absolute;
+
+  top:-6px;
+
+  right:-6px;
+
+  width:24px;
+
+  height:24px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:#f2f2f2;
+
+  cursor:pointer;
+
+}
+
+.dday-panel{
+
+  display:none;
+
+  margin-top:12px;
+
+  padding:16px;
+
+  background:#fff;
+
+  border-radius:18px;
+
+  box-shadow:
+  0 4px 12px
+  rgba(0,0,0,0.06);
+
+}
+
+.dday-panel.active{
+
+  display:block;
+
+}
+
+.dday-panel{
+
+  display:none;
+
+  position:absolute;
+
+  top:110px;
+
+  right:20px;
+
+  width:240px;
+
+  padding:18px;
+
+  background:#ffffff;
+
+  border-radius:20px;
+
+  box-shadow:
+  0 8px 24px
+  rgba(0,0,0,0.12);
+
+  z-index:100;
+
+}
+
+.dday-panel.active{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+
+}
+
+.dday-panel-title{
+
+  font-size:15px;
+
+  font-weight:700;
+
+}
+
+.dday-panel input{
+
+  width:100%;
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#f4f4f4;
+
+  font-size:14px;
+
+  box-sizing:border-box;
+
+  appearance:none;
+
+  -webkit-appearance:none;
+
+}
+
+#saveDdayBtn{
+
+  border:none;
+
+  border-radius:12px;
+
+  padding:12px;
+
+  background:#168845;
+
+  color:#fff;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+}
+
+.dday-setting-btn{
+
+  position:absolute;
+
+  top:-8px;
+
+  right:-8px;
+
+  width:28px;
+
+  height:28px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:#ffffff;
+
+  box-shadow:
+  0 2px 8px
+  rgba(0,0,0,0.12);
+
+  cursor:pointer;
+
+  font-size:13px;
+
+}
+
+#toast{
+
+  position:fixed;
+
+  bottom:120px;
+
+  left:50%;
+
+  transform:translateX(-50%);
+
+  z-index:99999;
+
+}
+
+.store-product-card{
+
+  display:flex;
+
+  justify-content:
+  space-between;
+
+  align-items:center;
+
+  gap:16px;
+
+}
+
+.store-product-left{
+
+  flex:1;
+
+}
+
+.store-product-list{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:16px;
+
+}
+
+.store-product-card{
+
+  background:white;
+
+  border-radius:24px;
+
+  display:flex;
+
+  flex-direction:column;
+
+}
+
+.store-product-buttons{
+
+  display:flex;
+
+  gap:8px;
+
+  margin-top:12px;
+
+}
+
+.store-product-tag{
+
+  width:fit-content;
+
+}
+
+.store-product-list{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:16px;
+
+}
+
+.store-product-card{
+
+  background:white;
+
+  border-radius:6px;
+
+  padding:10px;
+
+}
+
+.store-product-image{
+
+  width:100%;
+
+  aspect-ratio:1/0.92;
+
+  border-radius:3px;
+
+  overflow:hidden;
+
+  margin-bottom:-10px;
+
+}
+
+.store-product-image img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+}
+
+.store-product-name{
+
+  font-size:14px;
+
+  font-weight:700;
+
+  line-height:1.3;
+
+  margin-top:6px;
+
+}
+
+.store-product-price{
+
+  font-size:15px;
+
+  font-weight:800;
+
+  margin-top:-20px;
+
+}
+
+.store-product-tag{
+
+  width:fit-content;
+
+  font-size:11px;
+
+  padding:4px 8px;
+
+}
+
+.store-product-tag{
+
+  width:fit-content;
+
+  padding:3px 7px;
+
+  border-radius:4px;
+
+  border:1px solid #d7dce3;
+
+  background:white;
+
+  color:#4b6baf;
+
+  font-size:11px;
+
+  font-weight:600;
+
+  margin-top:-8px;
+
+}
+
+.wishlist-btn,
+.buy-btn{
+
+  flex:1;
+
+  padding:1px 15px;
+
+  width:fit-content;
+
+  height:28px;
+
+  border-radius:3px;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  transition:0.25s;
+
+  margin-top:-28px;
+
+  gap:10px;
+
+}
+
+/* 위시 */
+
+.wishlist-btn{
+
+  background:white;
+
+  color:#222;
+
+  border:1px solid #d9d9d9;
+
+}
+
+/* 구매 */
+
+.buy-btn{
+
+  background:black;
+
+  color:white;
+
+  border:none;
+
+}
+
+.wishlist-btn:active,
+.buy-btn:active{
+
+  transform:scale(0.96);
+
+}

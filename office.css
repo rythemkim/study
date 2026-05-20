@@ -1,0 +1,2165 @@
+/* ========================= */
+/* 상단 */
+/* ========================= */
+
+.office-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+
+  margin-bottom:18px;
+
+}
+
+/* ========================= */
+/* 오피스 화면 */
+/* ========================= */
+
+.office-screen{
+
+  display:none;
+
+  padding:4px 20px 120px;
+
+}
+
+/* 로고 */
+
+.office-logo{
+
+  display:flex;
+
+  flex-direction:column;
+
+}
+
+/* ========================= */
+/* 프로필 카드 */
+/* ========================= */
+
+.office-profile-card{
+
+  background:#fff;
+
+  border-radius:24px;
+
+  padding:18px 20px;
+
+  display:flex;
+
+  align-items:center;
+
+  margin-bottom:18px;
+
+  box-shadow:
+  0 4px 18px rgba(0,0,0,0.04);
+
+}
+
+/* 좌측 */
+
+.office-profile-left{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+}
+
+/* 이미지 */
+
+.office-profile-image{
+
+  width:52px;
+  height:52px;
+
+  border-radius:18px;
+
+  background:#f3f4f6;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+}
+
+.office-profile-image svg{
+
+  width:24px;
+  height:24px;
+
+  color:#444;
+
+}
+
+/* 부서 */
+
+.office-department{
+
+  font-size:12px;
+
+  color:#888;
+
+  margin-bottom:4px;
+
+}
+
+/* 이름 + 레벨 */
+
+.office-name-row{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+}
+
+/* 닉네임 */
+
+.office-nickname{
+
+  font-size:17px;
+
+  font-weight:700;
+
+  letter-spacing:-0.5px;
+
+}
+
+/* 레벨 */
+
+.inline-level{
+
+  font-size:12px;
+
+  font-weight:700;
+
+  color:#168845;
+
+}
+
+/* =========================
+   근속일
+========================= */
+
+.office-career{
+
+  margin-top:4px;
+
+  font-size:12px;
+
+  color:#8a8f98;
+
+}
+
+/* ========================= */
+/* 공통 카드 */
+/* ========================= */
+
+.office-card{
+
+  background:#fff;
+
+  border-radius:24px;
+
+  padding:22px;
+
+  margin-bottom:18px;
+
+  box-shadow:
+  0 4px 18px rgba(0,0,0,0.04);
+
+}
+
+/* 카드 제목 */
+
+.office-card-title{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  font-size:16px;
+
+  font-weight:700;
+
+  margin-bottom:20px;
+
+padding-left:1px;
+
+}
+
+/* 상태 */
+
+.office-state{
+
+  font-size:13px;
+
+  font-weight:700;
+
+  color:#168845;
+
+}
+
+.office-sub{
+
+  font-size:12px;
+
+  color:#888;
+
+}
+
+/* ========================= */
+/* 근무 정보 */
+/* ========================= */
+
+.office-work-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:10px;
+
+  text-align:center;
+
+}
+
+/* 라벨 */
+
+.office-label{
+
+  font-size:12px;
+
+  color:#888;
+
+  margin-bottom:8px;
+
+}
+
+/* 시간 */
+
+.office-time{
+
+  font-size:19px;
+
+  font-weight:500;
+
+  letter-spacing:-0.3px;
+
+  color:#555;
+
+}
+
+.office-time.green{
+
+  color:#168845;
+
+}
+
+/* 안내문 */
+
+.office-guide{
+
+  margin-top:18px;
+
+  font-size:12px;
+
+  color:#999;
+
+  text-align:center;
+
+}
+
+/* ========================= */
+/* 휴식 / 점심 */
+/* ========================= */
+
+.office-flex{
+
+  display:flex;
+
+  gap:18px;
+
+  margin-bottom:18px;
+
+}
+
+/* 카드 */
+
+.office-mini-card{
+
+  flex:1;
+
+  background:#fff;
+
+  border-radius:24px;
+
+  padding:22px;
+
+  box-shadow:
+  0 4px 18px rgba(0,0,0,0.04);
+
+}
+
+/* ========================= */
+/* 상세 버튼 */
+/* ========================= */
+
+.office-detail-btn{
+
+  width:100%;
+
+  height:56px;
+
+  border:none;
+
+  border-radius:20px;
+
+  background:#fff;
+
+  font-size:15px;
+
+  font-weight:700;
+
+  box-shadow:
+  0 4px 18px rgba(0,0,0,0.04);
+
+}
+
+/* ========================= */
+/* 프로필 카드 */
+/* ========================= */
+
+.office-profile-card{
+
+  background:#fff;
+
+  border-radius:24px;
+
+  padding:20px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:18px;
+
+  box-shadow:
+  0 4px 18px rgba(0,0,0,0.04);
+
+}
+
+/* 좌측 */
+
+.office-profile-left{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+}
+
+/* 프로필 이미지 */
+
+.office-profile-image{
+
+  width:54px;
+  height:54px;
+
+  border-radius:18px;
+
+  background:#f3f4f6;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+}
+
+.office-profile-image svg{
+
+  width:26px;
+  height:26px;
+
+  color:#444;
+
+}
+
+/* 부서 */
+
+.office-department{
+
+  font-size:13px;
+
+  color:#888;
+
+  margin-bottom:6px;
+
+}
+
+/* 닉네임 */
+
+.office-nickname{
+
+  font-size:18px;
+
+  font-weight:800;
+
+  letter-spacing:-1px;
+
+}
+
+/* 레벨 */
+
+.office-level{
+
+  text-align:right;
+
+}
+
+/* LEVEL */
+
+.level-label{
+
+  font-size:12px;
+
+  color:#888;
+
+  margin-bottom:6px;
+
+}
+
+/* Lv */
+
+.level-value{
+
+  font-size:22px;
+
+  font-weight:800;
+
+  color:#168845;
+
+}
+
+/* 닉네임 + 레벨 */
+
+.office-name-row{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+}
+
+.inline-level{
+
+  font-size:13px;
+
+  font-weight:700;
+
+  color:#168845;
+
+}
+
+/* 안내문 */
+
+.office-guide{
+
+  margin-top:18px;
+
+  font-size:12px;
+
+  color:#999;
+
+}
+
+/* 상태 동그라미 */
+
+.state-dot{
+
+  font-size:9px;
+
+  position:relative;
+
+  top:-1px;
+
+  margin-right:3px;
+
+}
+
+/* 오늘의 근무정보 타이틀 */
+
+.office-title-left{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:6px;
+
+}
+
+/* 아이콘 */
+
+.office-title-left svg{
+
+  width:16px;
+  height:16px;
+
+  color:#168845;
+
+}
+
+/* =========================
+   프로필 설정 버튼
+========================= */
+
+.office-profile-card{
+
+  position: relative;
+
+}
+
+.profile-setting-btn{
+
+  position: absolute;
+
+  top: 18px;
+
+  right: 18px;
+
+  width: 34px;
+
+  height: 34px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  backgrounde: #f3f4f6;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+}
+
+.profile-setting-btn svg{
+
+  width: 18px;
+
+  height: 18px;
+
+}
+
+.office-profile-card{
+
+  position:relative;
+
+}
+
+.office-rank-badge{
+
+  position:absolute;
+
+  top:65px;
+
+  right:18px;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:6px;
+
+  padding:6px 10px;
+
+  border-radius:999px;
+
+  background:#fff7d6;
+
+  color:#9a6b00;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  white-space:nowrap;
+
+}
+
+.office-rank-badge{
+
+  position:absolute;
+
+  top:65px;
+
+  right:18px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:6px 12px;
+
+  border-radius:999px;
+
+  background:#fff7d6;
+
+}
+
+.rank-item{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:4px;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  color:#9a6b00;
+
+  white-space:nowrap;
+
+}
+
+.rank-item svg{
+
+  width:14px;
+  height:14px;
+
+}
+
+.rank-item{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:4px;
+
+}
+
+.rank-item svg{
+
+  width:14px;
+  height:14px;
+
+}
+
+/* 상태 */
+
+.working-badge{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  height:17px;
+
+  padding:0 8px;
+
+  border-radius:999px;
+
+  background:#168845;
+
+  color:#fff;
+
+  font-size:8px;
+
+  font-weight:700;
+
+}
+
+/* 근무중 */
+
+.working-badge{
+
+  font-size:10px;
+
+  padding:6px 10px;
+
+  white-space:nowrap;
+
+}
+
+/* ========================= */
+/* 근무 카드 */
+/* ========================= */
+
+.work-card{
+
+  text-align:center;
+
+}
+
+.work-title{
+
+  font-size:22px;
+
+  font-weight:700;
+
+  margin-bottom:24px;
+
+}
+
+.work-time{
+
+  font-size:82px;
+
+  font-weight:800;
+
+  line-height:1;
+
+  color:#168845;
+
+  margin-bottom:34px;
+
+}
+
+/* ========================= */
+/* 버튼 */
+/* ========================= */
+
+.work-buttons{
+
+  display:flex;
+
+  gap:14px;
+
+}
+
+.start-btn,
+.end-btn{
+
+  flex:1;
+
+  border-radius:28px;
+
+  padding:22px 20px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+}
+
+.start-btn{
+
+  background:#168845;
+
+  color:#fff;
+
+}
+
+.end-btn{
+
+  background:#f4f4f4;
+
+  color:#111;
+
+}
+
+/* 아이콘 */
+
+.btn-icon{
+
+  width:54px;
+  height:54px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.18);
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+
+}
+
+.end-btn .btn-icon{
+
+  background:#fff;
+
+}
+
+.btn-icon svg{
+
+  width:24px;
+  height:24px;
+
+}
+
+/* 버튼 텍스트 */
+
+.btn-title{
+
+  font-size:20px;
+
+  font-weight:800;
+
+  margin-bottom:2px;
+
+  text-align:left;
+
+}
+
+.btn-sub{
+
+  font-size:13px;
+
+  opacity:0.92;
+
+  text-align:left;
+
+}
+
+/* ========================= */
+/* 연차 반차 */
+/* ========================= */
+
+.vacation-card{
+
+  display:flex;
+
+  padding:0;
+
+  overflow:hidden;
+
+}
+
+.vacation-item{
+
+  flex:1;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:16px;
+
+  padding:26px 20px;
+
+}
+
+.vacation-item:first-child{
+
+  border-right:
+  1px solid #ececec;
+
+}
+
+/* 아이콘 */
+
+.vacation-icon{
+
+  width:52px;
+  height:52px;
+
+  border-radius:50%;
+
+  background:#edf7ef;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+
+}
+
+.vacation-icon svg{
+
+  width:24px;
+  height:24px;
+
+  color:#168845;
+
+}
+
+/* 텍스트 */
+
+.vacation-title{
+
+  font-size:18px;
+
+  font-weight:800;
+
+  margin-bottom:4px;
+
+}
+
+.vacation-sub{
+
+  font-size:13px;
+
+  color:#777;
+
+}
+
+/* ========================= */
+/* 근무 카드 */
+/* ========================= */
+
+.work-card{
+
+  padding:28px 18px;
+
+}
+
+/* 제목 */
+
+.work-title{
+
+  font-size:20px;
+
+  line-height:1.2;
+
+}
+
+/* 시간 */
+
+.work-time{
+
+  font-size:58px;
+
+  line-height:1;
+
+  letter-spacing:-1px;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+}
+
+/* 버튼 */
+
+.work-buttons{
+
+  gap:10px;
+
+}
+
+/* 버튼 내부 */
+
+.start-btn,
+.end-btn{
+
+  padding:18px 16px;
+
+  gap:12px;
+
+  min-width:0;
+
+}
+
+/* 버튼 제목 */
+
+.btn-title{
+
+  font-size:16px;
+
+  line-height:1.2;
+
+  white-space:nowrap;
+
+}
+
+/* 버튼 설명 */
+
+.btn-sub{
+
+  font-size:11px;
+
+  line-height:1.2;
+
+  white-space:nowrap;
+
+}
+
+/* ========================= */
+/* 연차 반차 */
+/* ========================= */
+
+.vacation-item{
+
+  padding:20px 14px;
+
+  gap:10px;
+
+  min-width:0;
+
+}
+
+/* 텍스트 */
+
+.vacation-title{
+
+  font-size:15px;
+
+  line-height:1.2;
+
+  white-space:nowrap;
+
+}
+
+.vacation-sub{
+
+  font-size:11px;
+
+  line-height:1.2;
+
+  white-space:nowrap;
+
+}
+
+/* ========================= */
+/* 출퇴근 버튼 */
+/* ========================= */
+
+.work-buttons{
+
+  display:flex;
+
+  gap:10px;
+
+  width:100%;
+
+}
+
+/* 버튼 */
+
+.start-btn,
+.end-btn{
+
+  flex:1;
+
+  min-width:0;
+
+  padding:16px 14px;
+
+  gap:10px;
+
+  overflow:hidden;
+
+}
+
+/* 아이콘 */
+
+.btn-icon{
+
+  width:44px;
+  height:44px;
+
+  min-width:44px;
+
+}
+
+/* 버튼 텍스트 */
+
+.btn-text{
+
+  min-width:0;
+
+line-height:1.1;
+
+flex:1;
+
+}
+
+/* 제목 */
+
+.btn-title{
+
+  font-size:15px;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+margin-bottom:2px;
+
+}
+
+/* 설명 */
+
+.btn-sub{
+
+  font-size:10px;
+
+  white-space:nowrap;
+
+}
+
+/* ========================= */
+/* 연차 / 반차 */
+/* ========================= */
+
+.vacation-card{
+
+  display:flex;
+
+  align-items:stretch;
+
+}
+
+/* 카드 */
+
+.vacation-item{
+
+  flex:1;
+
+  min-width:0;
+
+  padding:18px 12px;
+
+  gap:10px;
+
+  justify-content:center;
+
+}
+
+/* 아이콘 */
+
+.vacation-icon{
+
+  width:44px;
+  height:44px;
+
+  min-width:44px;
+
+}
+
+/* 텍스트 */
+
+.vacation-text{
+
+  min-width:0;
+
+text-align:center;
+
+}
+
+/* 제목 */
+
+.vacation-title{
+
+  font-size:14px;
+
+  white-space:nowrap;
+
+}
+
+/* 설명 */
+
+.vacation-sub{
+
+  font-size:10px;
+
+  white-space:nowrap;
+
+}
+
+/* =========================
+   휴가 미니 카드
+========================= */
+
+.vacation-card{
+
+  display:grid;
+
+  grid-template-columns:
+  1fr 1fr 1fr;
+
+  gap:12px;
+
+  margin-top:16px;
+
+}
+
+.vacation-mini{
+
+  background:#ffffff;
+
+  border:none;
+
+  border-radius:18px;
+
+  padding:18px 10px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  box-shadow:
+  0 4px 12px rgba(0,0,0,0.06);
+
+}
+
+.vacation-mini-title{
+
+  font-size:14px;
+
+  font-weight:600;
+
+  color:#666666;
+
+}
+
+.vacation-mini-count{
+
+  margin-top:8px;
+
+  font-size:24px;
+
+  font-weight:700;
+
+  color:#111111;
+
+}
+
+/* 근무중 */
+
+.working-badge{
+
+  font-size:9px;
+
+  padding:5px 9px;
+
+}
+
+/* 근무중 */
+
+.working-badge{
+
+  font-size:8px;
+
+  padding:4px 8px;
+
+  white-space:nowrap;
+
+}
+
+/* ========================= */
+/* 자리비움 */
+/* ========================= */
+
+.away-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:12px;
+
+  margin-bottom:18px;
+
+  text-align:center;
+
+}
+
+/* 버튼 영역 */
+
+.away-buttons{
+
+  display:flex;
+
+  gap:10px;
+
+}
+
+/* 버튼 */
+
+.away-start,
+.away-end{
+
+  flex:1;
+
+  height:44px;
+
+  border-radius:14px;
+
+  font-size:14px;
+
+  font-weight:700;
+
+}
+
+/* 시작 */
+
+.away-start{
+
+  border:none;
+
+  background:#168845;
+
+  color:#fff;
+
+}
+
+/* 종료 */
+
+.away-end{
+
+  border:1px solid #ddd;
+
+  background:#fff;
+
+}
+
+/* 출근 아이콘 */
+
+.start-icon{
+
+  transform:translateX(-7px);
+
+}
+
+/* 퇴근 아이콘 */
+
+.end-icon{
+
+  transform:translateX(-7px);
+
+}
+
+/* 출근 설명 */
+
+.start-sub{
+
+  transform:
+  translateX(-14px)
+  translateY(1px);
+
+}
+
+/* 퇴근 설명 */
+
+.end-sub{
+
+  transform:
+  translateX(-14px)
+  translateY(1px);
+
+}
+
+/* 출근 제목 */
+
+.start-title{
+
+  transform:
+  translateX(-8px)
+  translateY(1px);
+
+}
+
+/* 퇴근 제목 */
+
+.end-title{
+
+  transform:
+  translateX(-8px)
+  translateY(1px);
+
+}
+
+/* 연차 */
+
+.annual-title{
+
+  transform:
+  translateX(-2px)
+  translateY(1px);
+
+}
+
+/* 반차 */
+
+.half-title{
+
+  transform:
+  translateX(-6px)
+  translateY(1px);
+
+}
+
+/* 연차 아이콘 */
+
+.annual-icon{
+
+  transform:
+  translateX(-4px)
+  translateY(1px);
+
+}
+
+/* 반차 아이콘 */
+
+.half-icon{
+
+  transform:
+  translateX(-2px)
+  translateY(1px);
+
+}
+
+/* 연차 서브텍스트 */
+
+.annual-sub{
+
+  transform:
+  translateX(-2px)
+  translateY(1px);
+
+}
+
+/* 반차 서브텍스트 */
+
+.half-sub{
+
+  transform:
+  translateX(-4px)
+  translateY(1px);
+
+}
+
+/* ========================= */
+/* 상세 패널 */
+/* ========================= */
+
+.detail-panel{
+
+  display:none;
+
+  margin-top:14px;
+
+  background:#fff;
+
+  border-radius:24px;
+
+  padding:22px;
+
+  box-shadow:
+  0 4px 18px rgba(0,0,0,0.04);
+
+}
+
+/* 활성화 */
+
+.detail-panel.active{
+
+  display:block;
+
+}
+
+/* 제목 */
+
+.detail-panel-title{
+
+  font-size:16px;
+
+  font-weight:700;
+
+  margin-bottom:14px;
+
+}
+
+/* 내용 */
+
+.detail-panel-content{
+
+  font-size:13px;
+
+  color:#777;
+
+  line-height:1.5;
+
+}
+
+/* =========================
+   근무 설정
+========================= */
+
+.work-setting-box{
+
+  margin-top: 18px;
+
+  padding: 18px;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+}
+
+.setting-title{
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  margin-bottom: 16px;
+
+}
+
+.setting-row{
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+
+}
+
+.setting-label{
+
+  font-size: 14px;
+
+  color: #666;
+
+}
+
+.setting-row input{
+
+  border: none;
+
+  border-radius: 10px;
+
+  padding: 8px 10px;
+
+  background: #f3f4f6;
+
+  font-size: 14px;
+
+
+
+}
+
+/* =========================
+   설정 패널
+========================= */
+
+.setting-panel{
+
+  position: fixed;
+
+  left: 0;
+
+  bottom: -100%;
+
+  width: 100%;
+
+  height: 75vh;
+
+  background: white;
+
+  border-radius: 28px 28px 0 0;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  z-index: 999;
+
+  transition: 0.35s;
+
+}
+
+.setting-panel.active{
+
+  bottom: 0;
+
+}
+
+/* 상단 */
+
+.setting-panel-header{
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+
+}
+
+.setting-panel-title{
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+}
+
+.setting-close-btn{
+
+  border: none;
+
+  background: none;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+}
+
+/* =========================
+   설정 패널 입력창
+========================= */
+
+.setting-input-group{
+
+  margin-bottom: 18px;
+
+}
+
+.setting-input-label{
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  margin-bottom: 8px;
+
+  color: #444;
+
+}
+
+.setting-input-group input,
+.setting-input-group select{
+
+  width: 100%;
+
+  height: 48px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: #f3f4f6;
+
+  padding: 0 14px;
+
+  font-size: 14px;
+
+}
+
+/* =========================
+출퇴근 기록
+========================= */
+
+.attendance-item{
+
+  background:#f8f9fb;
+
+  border-radius:18px;
+
+  padding:16px;
+
+  margin-bottom:14px;
+
+}
+
+.attendance-date{
+
+  font-size:15px;
+
+  font-weight:700;
+
+  margin-bottom:10px;
+
+}
+
+.attendance-row{
+
+  font-size:14px;
+
+  color:#555;
+
+  margin-bottom:6px;
+
+}
+
+.attendance-state{
+
+  display:inline-block;
+
+  margin-top:10px;
+
+  padding:6px 10px;
+
+  border-radius:999px;
+
+  background:#e8f5e9;
+
+  color:#168845;
+
+  font-size:13px;
+
+  font-weight:700;
+
+}
+
+.empty-record{
+
+  text-align:center;
+
+  color:#999;
+
+  padding:30px 0;
+
+}
+
+/* =========================
+월 출석 요약
+========================= */
+
+.monthly-summary{
+
+  background:#f8f9fb;
+
+  border-radius:18px;
+
+  padding:18px;
+
+  margin-bottom:18px;
+
+}
+
+.summary-title{
+
+  font-size:16px;
+
+  font-weight:700;
+
+  margin-bottom:14px;
+
+}
+
+.summary-row{
+
+  font-size:14px;
+
+  color:#555;
+
+  margin-bottom:8px;
+
+}
+
+.summary-grade{
+
+  margin-top:14px;
+
+  padding:10px;
+
+  border-radius:12px;
+
+  background:#e8f5e9;
+
+  color:#168845;
+
+  font-weight:700;
+
+  text-align:center;
+
+}
+
+/* =========================
+   설정 패널 스크롤
+========================= */
+
+.setting-panel{
+
+  height:100vh;
+
+}
+
+.setting-panel-content{
+
+  overflow-y:auto;
+
+  height:calc(100vh - 80px);
+
+}
+
+/* ========================= */
+/* 일 누적 급여 */
+/* ========================= */
+
+.daily-pay-wrap{
+
+  margin-top:8px;
+
+  margin-bottom:28px;
+
+}
+
+.daily-pay-label{
+
+  font-size:12px;
+
+  color:#777;
+
+  margin-bottom:8px;
+
+}
+
+.daily-pay{
+
+  font-size:24px;
+
+  font-weight:800;
+
+  color:#168845;
+
+  line-height:1;
+
+}
+
+/* 타이틀 */
+
+.mini-title{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:6px;
+
+  font-size:14px;
+
+  font-weight:500;
+
+  margin-bottom:14px;
+
+justify-content:center;
+
+}
+
+/* 아이콘 */
+
+.mini-title svg{
+
+  width:16px;
+  height:16px;
+
+}
+
+/* 타이머 */
+
+.mini-time{
+
+  font-size:23px;
+
+  font-weight:500;
+
+  margin-bottom:14px;
+
+  letter-spacing:-0.5px;
+
+text-align:center;
+
+}
+
+/* 버튼 */
+
+.mini-btn{
+
+  width:100%;
+
+  height:42px;
+
+  border:none;
+
+  border-radius:14px;
+
+  background:#168845;
+
+  color:#fff;
+
+  font-size:14px;
+
+  font-weight:700;
+
+}
+
+.summary-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  1fr 1fr;
+
+  gap:12px;
+
+}
+
+.annual-summary{
+
+  background:#fff;
+
+  border-radius:16px;
+
+  padding:16px;
+
+margin-bottom:18px;
+
+}
+
+.annual-progress-bar{
+
+  width:100%;
+
+  height:8px;
+
+  background:#ececec;
+
+  border-radius:999px;
+
+  overflow:hidden;
+
+  margin-top:8px;
+
+}
+
+.annual-progress-fill{
+
+  height:100%;
+
+  background:#168845;
+
+  border-radius:999px;
+
+}
+
+.monthly-summary,
+.annual-summary{
+
+  background:#ffffff;
+
+  border-radius:18px;
+
+  padding:18px;
+
+  box-shadow:
+  0 4px 12px
+  rgba(0,0,0,0.06);
+
+}
+
+.summary-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  1fr 1fr;
+
+  gap:14px;
+
+  margin-top:14px;
+
+}
+
+.annual-progress-bar{
+
+  width:100%;
+
+  height:8px;
+
+  background:#ececec;
+
+  border-radius:999px;
+
+  overflow:hidden;
+
+  margin-top:10px;
+
+}
+
+.annual-progress-fill{
+
+  height:100%;
+
+  background:#168845;
+
+  border-radius:999px;
+
+  transition:0.3s;
+
+}
+
+.annual-progress-text{
+
+  margin-top:8px;
+
+  margin-bottom:8px;
+
+  font-size:13px;
+
+  color:#666;
+
+}
+
+.annual-progress-bar{
+
+  width:100%;
+
+  height:8px;
+
+  background:#ececec;
+
+  border-radius:999px;
+
+  overflow:hidden;
+
+  margin-bottom:12px;
+
+}
+
+.annual-section{
+
+  margin-top:17px;
+
+  margin-bottom:20px;
+
+}
+
+.attendance-toggle{
+
+  margin-top:16px;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+}
+
+.detail-panel-content{
+
+  display:none;
+
+  margin-top:12px;
+
+}
+
+.detail-panel-content.active{
+
+  display:block;
+
+}
+
+.attendance-toggle{
+
+  margin-top:16px;
+
+  padding:16px 18px;
+
+  background:#ffffff;
+
+  border-radius:18px;
+
+  border:1px solid #EBEBEB;
+
+  box-shadow:
+  0 4px 12px
+  rgba(0,0,0,0.06);
+
+  font-size:15px;
+
+  font-weight:800;
+
+  cursor:pointer;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+}
+
+.detail-panel-content{
+
+  display:none;
+
+  margin-top:10px;
+
+}
+
+.detail-panel-content.active{
+
+  display:block;
+
+}
+
+.setting-input-group input{
+
+  width:100%;
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#f4f4f4;
+
+  font-size:14px;
+
+  box-sizing:border-box;
+
+  appearance:none;
+
+  -webkit-appearance:none;
+
+}

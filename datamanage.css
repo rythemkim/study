@@ -1,0 +1,635 @@
+.data-section-title{
+
+  margin-top:24px;
+
+  margin-bottom:12px;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  color:#888;
+
+}
+
+.data-btn{
+
+  width:100%;
+
+  height:46px;
+
+  border:none;
+
+  border-radius:14px;
+
+  background:#168845;
+
+  color:white;
+
+  font-weight:700;
+
+  margin-bottom:12px;
+
+}
+
+.danger-btn{
+
+  width:100%;
+
+  height:46px;
+
+  border:none;
+
+  border-radius:14px;
+
+  background:#fff1f1;
+
+  color:#d33;
+
+  font-weight:700;
+
+  margin-bottom:12px;
+
+}
+
+.purchase-popup{
+
+  position:fixed;
+
+  top:50%;
+
+  left:50%;
+
+  transform:
+  translate(-50%,-50%)
+  scale(0.9);
+
+  width:280px;
+
+  padding:24px;
+
+  border-radius:24px;
+
+  background:white;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.18);
+
+  z-index:9999;
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:
+  0.3s;
+
+  text-align:center;
+
+}
+
+.purchase-popup.show{
+
+  opacity:1;
+
+  transform:
+  translate(-50%,-50%)
+  scale(1);
+
+}
+
+.purchase-popup-check{
+
+  font-size:20px;
+
+  font-weight:800;
+
+  color:#168845;
+
+  margin-bottom:18px;
+
+}
+
+.purchase-popup-price{
+
+  font-size:28px;
+
+  font-weight:800;
+
+  margin-bottom:10px;
+
+}
+
+.purchase-popup-product{
+
+  font-size:16px;
+
+  font-weight:700;
+
+}
+
+.purchase-banner{
+
+  position:fixed;
+
+  top:-140px;
+
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:320px;
+
+  padding:13px 16px;
+
+  border-radius:16px;
+
+  background:white;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.16);
+
+  z-index:9999;
+
+  transition:
+top 0.7s ease,
+opacity 0.7s ease;
+
+}
+
+.purchase-banner.show{
+
+  top:24px;
+
+}
+
+.purchase-banner-check{
+
+  font-size:18px;
+
+  font-weight:800;
+
+  color:#168845;
+
+  margin-bottom:12px;
+
+}
+
+.purchase-banner-user{
+
+  font-size:13px;
+
+  color:#888;
+
+  margin-bottom:10px;
+
+}
+
+.purchase-banner-info{
+
+  font-size:16px;
+
+  font-weight:700;
+
+  line-height:1.5;
+
+}
+
+.purchase-banner-check{
+
+  font-size:16px;
+
+}
+
+.purchase-banner-user{
+
+  font-size:12px;
+
+}
+
+.purchase-banner-info{
+
+  font-size:14px;
+
+}
+
+.store-product-card.purchase-effect{
+
+  transform:scale(1.03);
+
+  box-shadow:
+  0 10px 28px rgba(22,136,69,0.22);
+
+  transition:
+  0.35s;
+
+}
+
+.store-product-card.purchase-effect{
+
+  transform:
+  scale(1.06);
+
+  background:
+  rgba(22,136,69,0.08);
+
+  box-shadow:
+  0 16px 40px rgba(
+    22,
+    136,
+    69,
+    0.32
+  );
+
+}
+
+.wishlist-complete-popup{
+
+  position:fixed;
+
+  top:50%;
+
+  left:50%;
+
+  transform:
+  translate(-50%,-50%)
+  scale(0.9);
+
+  width:280px;
+
+  padding:28px 24px;
+
+  border-radius:28px;
+
+  background:white;
+
+  box-shadow:
+  0 20px 50px rgba(
+    22,
+    136,
+    69,
+    0.25
+  );
+
+  z-index:9999;
+
+  opacity:0;
+
+  pointer-events:none;
+
+  text-align:center;
+
+  transition:
+  0.4s ease;
+
+}
+
+.wishlist-complete-popup.show{
+
+  opacity:1;
+
+  transform:
+  translate(-50%,-50%)
+  scale(1);
+
+}
+
+.wishlist-complete-icon{
+
+  font-size:42px;
+
+  margin-bottom:12px;
+
+}
+
+.wishlist-complete-title{
+
+  font-size:24px;
+
+  font-weight:800;
+
+  color:#168845;
+
+  margin-bottom:12px;
+
+}
+
+.wishlist-complete-product{
+
+  font-size:18px;
+
+  font-weight:700;
+
+  margin-bottom:10px;
+
+}
+
+.wishlist-complete-sub{
+
+  font-size:14px;
+
+  color:#888;
+
+}
+
+.wishlist-card.wishlist-achieved{
+
+  box-shadow:
+  0 0 30px rgba(
+    22,
+    136,
+    69,
+    0.35
+  );
+
+  transform:scale(1.02);
+
+  transition:0.4s;
+
+}
+
+/* =========================
+   다크모드
+========================= */
+
+.dark-mode{
+
+  background:#111;
+
+  color:white;
+
+}
+
+.dark-mode .screen{
+
+  background:#111;
+
+}
+
+.dark-mode .profile-card,
+.dark-mode .work-card,
+.dark-mode .weekly-card,
+.dark-mode .office-card,
+.dark-mode .office-mini-card,
+.dark-mode .wishlist-card,
+.dark-mode .store-product-card,
+.dark-mode .my-menu-item,
+.dark-mode .career-item,
+.dark-mode .slide-panel,
+.dark-mode .bank-card{
+
+  background:#1b1b1b;
+
+  color:white;
+
+}
+
+.dark-mode input,
+.dark-mode select{
+
+  background:#222;
+
+  color:white;
+
+  border:1px solid #333;
+
+}
+
+.dark-mode .weekly-sub,
+.dark-mode .sub-text,
+.dark-mode .wishlist-brand,
+.dark-mode .office-label,
+.dark-mode .setting-guide{
+
+  color:#999;
+
+}
+
+.dark-mode .bottom-nav{
+
+  background:#1b1b1b;
+
+  border-top:
+  1px solid #333;
+
+}
+
+.dark-mode .nav-item{
+
+  color:#aaa;
+
+}
+
+.dark-mode .nav-item.active{
+
+  color:white;
+
+}
+
+.dark-mode .vacation-mini{
+
+  background:#1b1b1b;
+
+  color:white;
+
+}
+
+.dark-mode .office-profile-card{
+
+  background:#1b1b1b;
+
+  color:white;
+
+}
+
+.dark-mode .store-category{
+
+  background:#1b1b1b;
+
+  color:#ddd;
+
+  border:
+  1px solid #333;
+
+}
+
+.dark-mode .store-category.active{
+
+  background:#168845;
+
+  color:white;
+
+  border:none;
+
+}
+
+.dark-mode .vacation-mini-title,
+.dark-mode .bank-label,
+.dark-mode .weekly-label{
+
+  color:#aaa;
+
+}
+
+.dark-mode .bell-btn{
+
+  background:#1b1b1b;
+
+  color:white;
+
+  border:1px solid #333;
+
+}
+
+.dark-mode .nickname{
+
+  color:white;
+
+}
+
+.dark-mode .vacation-card{
+
+  background:#1b1b1b;
+
+}
+
+.dark-mode .office-detail-btn{
+
+  background:#1b1b1b;
+
+  color:white;
+
+  border:1px solid #333;
+
+}
+
+.dark-mode .detail-panel{
+
+  background:#1b1b1b;
+
+  color:white;
+
+}
+
+.dark-mode .detail-panel-content{
+
+  background:#1b1b1b;
+
+  color:white;
+
+}
+
+.dark-mode .detail-panel-title{
+
+  color:white;
+
+}
+
+.dark-mode .monthly-summary,
+.dark-mode .annual-summary{
+
+  background:#222;
+
+  color:white;
+
+}
+
+.dark-mode .vacation-mini-count{
+
+  color:white;
+
+}
+
+.dark-mode .office-time{
+
+  color:white;
+
+}
+
+.dark-mode .office-time.green{
+
+  color:#4ade80;
+
+}
+
+.dark-mode .setting-input-group{
+
+  background:#111;
+
+  color:white;
+
+}
+
+.dark-mode .goal-add-box{
+
+  background:#111;
+
+  color:white;
+
+}
+
+.dark-mode .position-card{
+
+  background:#222;
+
+  color:white;
+
+}
+
+.dark-mode .profile-panel-content{
+
+  background:#111;
+
+}
+
+.dark-mode .data-btn{
+
+  background:#222;
+
+  color:white;
+
+}
+
+.dark-mode .danger-btn{
+
+  background:#3a1d1d;
+
+  color:#ffb4b4;
+
+}
+
+.dark-mode input::placeholder{
+
+  color:#111;
+
+}
+
+.dark-mode input,
+.dark-mode select{
+
+  background:#222 !important;
+
+  color:white !important;
+
+  border:
+  1px solid #333;
+
+}
+
+.dark-mode input{
+
+  -webkit-appearance:none;
+
+}
+
+.dark-mode .slide-panel{
+
+  background:#111;
+
+}
+
+.dark-mode .profile-panel-content{
+
+  background:#111;
+
+}
