@@ -100,6 +100,18 @@ function saveMonthlyHistory(
   bonus
 ){
 
+if(
+  !isMonthlyEvaluationTarget()
+){
+
+  showToast(
+    "15일 이후 입사자는 이번달 평가 대상이 아닙니다."
+  );
+
+  return;
+
+}
+
   const history =
   JSON.parse(
     localStorage.getItem(
@@ -663,6 +675,72 @@ function updateDday(){
     `D+${Math.abs(diff)}`;
 
   }
+
+}
+
+// =========================
+// 월평 평가 대상 여부
+// =========================
+
+function isMonthlyEvaluationTarget(){
+
+  // 입사일 없으면 제외
+
+  if(!joinDate){
+
+    return false;
+
+  }
+
+  const join =
+  new Date(joinDate);
+
+  const today =
+  new Date();
+
+  // 입사 월
+
+  const joinMonth =
+  join.getMonth();
+
+  // 현재 월
+
+  const currentMonth =
+  today.getMonth();
+
+  // 입사 연도
+
+  const joinYear =
+  join.getFullYear();
+
+  // 현재 연도
+
+  const currentYear =
+  today.getFullYear();
+
+  // 이번달 입사자인 경우만 체크
+
+  const isSameMonth =
+
+    joinMonth === currentMonth
+    &&
+
+    joinYear === currentYear;
+
+  // 이번달 입사 + 15일 이후
+
+  if(
+    isSameMonth
+    &&
+
+    join.getDate() > 15
+  ){
+
+    return false;
+
+  }
+
+  return true;
 
 }
 
@@ -1382,6 +1460,10 @@ function playPurchaseEffect(
 // =========================
 
 function showWishlistAchievement(){
+
+playVibration(
+  [80,40,80,40,180]
+);
 
   // 위시 없으면 종료
 

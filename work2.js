@@ -25,6 +25,8 @@ function startWork(){
 
   isWorking = true;
 
+playVibration(70);
+
 restUsed = false;
 
 restSeconds = 1800;
@@ -316,6 +318,8 @@ renderAnnualSummary();
 
 isWorking = false;
 
+playVibration(180);
+
 // 저장 삭제
 
 localStorage.removeItem(
@@ -503,6 +507,8 @@ if(!confirmRest){
 
   isResting = true;
 
+playVibration(60);
+
 setWorkState("rest");
 
   restBtn.textContent =
@@ -525,6 +531,8 @@ saveState();
     if(restSeconds <= 0){
 
       endRest();
+
+playVibration(100);
 
       showToast(
         "휴식이 종료되었습니다."
@@ -609,6 +617,8 @@ if(isAway){
 
   isLunch = true;
 
+playVibration(60);
+
 setWorkState("lunch");
 
 saveState();
@@ -632,6 +642,8 @@ saveState();
     if(lunchSeconds <= 0){
 
       endLunch();
+
+playVibration(100);
 
       alert(
         "점심시간이 종료되었습니다."
@@ -706,6 +718,8 @@ function startAway(){
 
   isAway = true;
 
+playVibration(50);
+
 saveState();
 
   // 횟수 차감
@@ -759,6 +773,8 @@ function endLunch(){
 
   isLunch = false;
 
+playVibration(100);
+
 setWorkState("working");
 
   lunchUsed = true;
@@ -801,6 +817,8 @@ function endRest(){
   // 상태 종료
 
   isResting = false;
+
+playVibration(100);
 
   restUsed = true;
 
@@ -847,9 +865,13 @@ function endAway(){
     awayTimer
   );
 
+playVibration(100);
+
   // 상태 종료
 
   isAway = false;
+
+playVibration(100);
 
 saveState();
 

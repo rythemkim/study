@@ -4,6 +4,19 @@
 
 function checkAbsent(){
 
+// 최초 실행이면 종료
+
+if(!hasInitializedAttendance){
+
+  localStorage.setItem(
+    "hasInitializedAttendance",
+    true
+  );
+
+  return;
+
+}
+
   // 현재 시간
 
   const now =
@@ -40,6 +53,14 @@ function checkAbsent(){
       "attendanceRecords"
     )
   ) || [];
+
+// 최초 실행 데이터 없으면 종료
+
+if(savedRecords.length === 0){
+
+  return;
+
+}
 
   // 오늘 기록 존재 여부
 
@@ -108,9 +129,9 @@ function checkAbsent(){
 
   renderMonthlySummary();
 
-  alert(
-    "무단결근 처리되었습니다."
-  );
+  showToast(
+  "무단결근 처리되었습니다."
+);
 
 }
 

@@ -160,6 +160,10 @@ function useAnnualLeave(){
 
   renderAttendance();
 
+playVibration(
+  [80,40,120]
+);
+
   showToast(
     "연차가 등록되었습니다."
   );
@@ -298,7 +302,11 @@ function useHalfLeave(){
 
   renderAttendance();
 
-  alert(
+playVibration(
+  [80,40,120]
+);
+
+  showToast(
     halfType === "am"
     ? "오전반차가 등록되었습니다."
     : "오후반차가 등록되었습니다."
@@ -498,6 +506,8 @@ getHourlyPay() * 8;
 
     isWorking = false;
 
+playVibration(180);
+
     localStorage.removeItem(
       "isWorking"
     );
@@ -607,7 +617,9 @@ localStorage.setItem(
   dailyPay.textContent =
   "+0원";
 
-  alert(
+playVibration(180);
+
+  showToast(
     "병가가 등록되었습니다."
   );
 

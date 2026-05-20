@@ -141,6 +141,10 @@ function buyProduct(
 
   if(totalPay < price){
 
+playVibration(
+  [40,30,40]
+);
+
     showToast(
       "잔액이 부족합니다."
     );

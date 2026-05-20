@@ -142,6 +142,13 @@ Number(
   )
 ) || 0;
 
+let hasInitializedAttendance =
+JSON.parse(
+  localStorage.getItem(
+    "hasInitializedAttendance"
+  )
+) || false;
+
 // =========================
 // 저장 데이터
 // =========================
@@ -267,6 +274,8 @@ Number(
     "lastAnnualHours"
   )
 ) || 0;
+
+
 
 // =========================
 // D-day
