@@ -2495,3 +2495,7 @@ max-width: 100%;
   transform:scale(0.96);
 
 }
+
+#totalPayLabel{
+  margin-left:12px;
+}
