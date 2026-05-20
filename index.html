@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<link
+  rel="stylesheet"
+  as="style"
+  crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+/>
+
+  <meta charset="UTF-8">
+
+  <meta
+  name="viewport"
+  content="
+  width=device-width,
+  initial-scale=1.0,
+  maximum-scale=1.0,
+  user-scalable=no
+  "
+>
+
+  <title>Study Office</title>
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="animation.css">
+<link rel="stylesheet" href="office.css">
+<link rel="stylesheet" href="mytab.css">
+<link rel="stylesheet" href="datamanage.css">
+
+  <!-- Lucide SVG Icons -->
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+<body>
+
+  <div class="app">
+
+<div
+  class="home-screen screen-padding screen"
+  id="homeScreen"
+>
+
+<div class="office-top">
+
+  <!-- 좌측 로고 -->
+
+  <div class="common-logo">
+
+    <div class="common-logo-text">
+      Study Office
+    </div>
+
+    <div class="common-logo-sub">
+      HOME
+    </div>
+
+  </div>
+
+  <!-- 우측 알림 -->
+
+  <button class="bell-btn">
+
+    <i data-lucide="bell"></i>
+
+  </button>
+
+</div>
+
+    <!-- ========================= -->
+    <!-- 프로필 카드 -->
+    <!-- ========================= -->
+
+    <section class="profile-card">
+
+      <!-- 좌측 -->
+
+      <div class="profile-left">
+
+        <div class="profile-image">
+
+          <i data-lucide="user-round"></i>
+
+        </div>
+
+        <div class="profile-info">
+
+          <div
+  class="department"
+  id="homeDepartment"
+>
+</div>
+
+          <div class="name-row">
+
+  <span
+  class="nickname"
+  id="homeNickname"
+>
+  지니어스
+</span>
+
+</div>
+
+          <div class="working-badge">
+            근무중
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- 현재 시급 -->
+
+      <div class="profile-middle">
+
+        <div class="label current-pay-label">
+  현재 시급
+</div>
+
+        <div
+  class="hour-pay"
+  id="hourPay"
+>
+  10,320원
+</div>
+
+        <div class="sub-text">
+          기본시급 10,320원
+        </div>
+
+      </div>
+
+      <!-- DDAY -->
+
+      <div class="profile-right">
+
+        <div class="label">
+          D-DAY
+        </div>
+
+        <div
+  class="goal"
+  id="ddayGoal"
+>
+  공무원 시험
+</div>
+
+<div
+  class="dday"
+  id="ddayText"
+>
+  D-120
+</div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 오늘 총 근무시간 -->
+    <!-- ========================= -->
+
+    <section class="work-card">
+
+      <div class="work-title">
+        오늘 총 근무시간
+      </div>
+
+      <div
+  class="work-time"
+  id="workTime"
+>
+  00:00:00
+</div>
+
+<!-- 일 누적 급여 -->
+
+<div class="daily-pay-wrap">
+
+  <div class="daily-pay-label">
+    일 누적 급여
+  </div>
+
+  <div
+    class="daily-pay"
+    id="dailyPay"
+  >
+    0원
+  </div>
+
+</div>
+
+      <!-- 버튼 -->
+
+      <div class="work-buttons">
+
+        <!-- 출근 -->
+
+        <button class="start-btn">
+
+          <div class="btn-icon start-icon">
+
+            <i data-lucide="log-in"></i>
+
+          </div>
+
+          <div class="btn-text">
+
+            <div class="btn-title start-title">
+  출근하기
+</div>
+
+            <div class="btn-sub start-sub">
+  근무를 시작합니다
+</div>
+
+          </div>
+
+        </button>
+
+        <!-- 퇴근 -->
+
+        <button class="end-btn">
+
+          <div class="btn-icon end-icon">
+
+            <i data-lucide="log-out"></i>
+
+          </div>
+
+          <div class="btn-text">
+
+            <div class="btn-title end-title">
+  퇴근하기
+</div>
+
+            <div class="btn-sub end-sub">
+  근무를 종료합니다
+</div>
+
+          </div>
+
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 연차 / 반차 -->
+    <!-- ========================= -->
+
+    <section class="vacation-card">
+
+  <!-- 연차 -->
+
+  <button
+    class="vacation-mini"
+    id="annualLeaveBtn"
+  >
+
+    <div class="vacation-mini-title">
+      연차
+    </div>
+
+    <div
+      class="vacation-mini-count"
+      id="annualCount"
+    >
+      0
+    </div>
+
+  </button>
+
+  <!-- 반차 -->
+
+  <button
+    class="vacation-mini"
+    id="halfCreateBtn"
+  >
+
+    <div class="vacation-mini-title">
+      반차
+    </div>
+
+    <div
+      class="vacation-mini-count"
+      id="halfCount"
+    >
+      0
+    </div>
+
+  </button>
+
+  <!-- 병가 -->
+
+  <button
+    class="vacation-mini"
+    id="sickLeaveBtn"
+  >
+
+    <div class="vacation-mini-title">
+      병가
+    </div>
+
+    <div
+      class="vacation-mini-count"
+      id="sickCount"
+    >
+      2
+    </div>
+
+  </button>
+
+</section>
+
+    <!-- ========================= -->
+    <!-- 이번 주 근무 현황 -->
+    <!-- ========================= -->
+
+    <section class="weekly-card">
+
+      <div class="weekly-header">
+
+        <div class="weekly-title">
+          이번 주 근무 현황
+        </div>
+
+        <button class="more-btn">
+          전체 보기
+        </button>
+
+      </div>
+
+      <div class="weekly-content">
+
+        <!-- 주간 근무 -->
+
+        <div class="weekly-box">
+
+          <div class="weekly-icon weekly-work-icon">
+
+            <i data-lucide="timer"></i>
+
+          </div>
+
+          <div class="weekly-info">
+
+            <div
+  class="weekly-label"
+  id="weeklyWorkLabel"
+>
+  주간 근무시간
+</div>
+
+<div
+  class="weekly-main"
+  id="weeklyWorkTime"
+>
+  00:00:00
+
+</div>
+
+<div
+  class="weekly-sub"
+  id="totalWorkInfo"
+>
+  5월 00:00:00
+</div>
+
+          </div>
+
+        </div>
+
+        <!-- 누적 급여 -->
+
+        <div class="weekly-box">
+
+          <div class="weekly-icon weekly-pay-icon">
+
+            <i data-lucide="wallet"></i>
+
+          </div>
+
+          <div class="weekly-info">
+
+            <div
+  class="weekly-label"
+  id="totalPayLabel"
+>
+  이번 달 누적 급여
+</div>
+
+           <div
+  class="weekly-main"
+  id="totalPayText"
+>
+  0원
+</div>
+
+            <div
+  class="weekly-sub"
+  id="currentMonthText"
+>
+  이번 달
+</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+<!-- ========================= -->
+<!-- 오피스 화면 -->
+<!-- ========================= -->
+
+<div
+  class="office-screen screen-padding screen"
+  id="officeScreen"
+  style="display:none;"
+>
+
+  <!-- 상단 -->
+
+<div class="office-top">
+
+  <!-- 좌측 -->
+  <div class="office-top-left">
+
+    <div class="common-logo">
+
+      <div class="common-logo-text">
+        Study Office
+      </div>
+
+      <div class="common-logo-sub">
+        OFFICE
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 통장 -->
+  <div class="bank-card">
+
+    <div class="bank-label">
+      통장 잔고
+    </div>
+
+    <div class="bank-money-wrap">
+
+      <i data-lucide="wallet"></i>
+
+      <div
+  class="bank-money"
+  id="officeBankMoney"
+>
+  1,253,400원
+</div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- 프로필 카드 -->
+
+<div class="office-profile-card">
+
+
+
+<div
+  class="office-rank-badge"
+  id="officeRankBadge"
+>
+
+  <div class="rank-item">
+
+    <i data-lucide="trophy"></i>
+
+    <span>0</span>
+
+  </div>
+
+  <div class="rank-item">
+
+    <i data-lucide="award"></i>
+
+    <span>0</span>
+
+  </div>
+
+  <div class="rank-item">
+
+    <i data-lucide="badge"></i>
+
+    <span>0</span>
+
+  </div>
+
+</div>
+
+  <!-- 좌측 -->
+
+  <div class="office-profile-left">
+
+    <div class="office-profile-image">
+
+      <i data-lucide="user-round"></i>
+
+      </div>
+
+  <div class="office-profile-info">
+
+      <div class="office-department">
+
+  <span id="officeDepartment">
+  </span>
+
+  <span id="departmentSlash">
+    /
+  </span>
+
+  <span id="officePosition">
+    인턴
+  </span>
+
+</div>
+
+      <div class="office-name-row">
+
+  <div
+  class="office-nickname"
+  id="officeNickname"
+>
+  지니어스
+</div>
+
+  <div
+  class="inline-level"
+  id="officeLevel"
+>
+  Lv.0
+</div>
+
+</div>
+
+<div
+  class="office-career"
+  id="officeCareer"
+>
+  근속 0일째
+</div>
+
+    </div>
+
+  </div>
+
+</div>
+
+  <!-- 오늘 근무 정보 -->
+
+  <div class="office-card">
+
+    <div class="office-card-title">
+
+  <div class="office-title-left">
+
+    <i data-lucide="briefcase-business"></i>
+
+    오늘의 근무 정보
+
+  </div>
+
+  <span class="office-state">
+
+  <span class="state-dot">
+    ●
+  </span>
+
+  근무중
+
+</span>
+
+    </div>
+
+    <div class="office-work-grid">
+
+      <div>
+
+        <div class="office-label">
+          출근 시간
+        </div>
+
+        <div
+  class="office-time"
+  id="officeStartTime"
+>
+  09:00
+</div>
+
+      </div>
+
+      <div>
+
+        <div class="office-label">
+          퇴근 시간
+        </div>
+
+        <div
+  class="office-time"
+  id="officeEndTime"
+>
+  18:00
+</div>
+
+      </div>
+
+      <div>
+
+        <div class="office-label">
+          남은 시간
+        </div>
+
+        <div
+  class="office-time green"
+  id="remainingTime"
+>
+  00:00:00
+</div>
+
+      </div>
+
+    </div>
+
+<div class="office-guide">
+
+  휴게시간 1시간 제외,
+  총 근무시간 8시간 기준
+
+</div>
+
+  </div>
+
+  <!-- 휴식 / 점심 -->
+
+  <div class="office-flex">
+
+    <!-- 휴식 -->
+
+    <div class="office-mini-card">
+
+      <div class="mini-title">
+
+  <i data-lucide="coffee"></i>
+
+  휴식 (30분)
+
+</div>
+
+      <div
+  class="mini-time"
+  id="restTime"
+>
+  30:00
+</div>
+
+      <button
+  class="mini-btn"
+  id="restBtn"
+>
+        시작하기
+      </button>
+
+    </div>
+
+    <!-- 점심 -->
+
+    <div class="office-mini-card">
+
+      <div class="mini-title">
+
+  <i data-lucide="utensils"></i>
+
+  점심 (30분)
+
+</div>
+
+      <div
+  class="mini-time"
+  id="lunchTime"
+>
+  30:00
+</div>
+
+      <button
+  class="mini-btn"
+  id="lunchBtn"
+>
+  시작하기
+</button>
+
+    </div>
+
+  </div>
+
+  <!-- 자리비움 -->
+
+<div class="office-card">
+
+  <div class="office-card-title">
+
+    자리비움
+
+    <span class="office-sub">
+      일 5회
+    </span>
+
+  </div>
+
+  <!-- 정보 -->
+
+  <div class="away-grid">
+
+    <!-- 남은 횟수 -->
+
+    <div>
+
+      <div class="office-label">
+        남은 횟수
+      </div>
+
+      <div
+        class="office-time green"
+        id="awayCount"
+      >
+        5 / 5
+      </div>
+
+    </div>
+
+    <!-- 타이머 -->
+
+    <div>
+
+      <div class="office-label">
+        타이머
+      </div>
+
+      <div
+        class="office-time"
+        id="awayTime"
+      >
+        10:00
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 버튼 -->
+
+  <div class="away-buttons">
+
+    <button
+      class="away-start"
+      id="awayStartBtn"
+    >
+      자리비움 시작
+    </button>
+
+    <button
+      class="away-end"
+      id="awayEndBtn"
+    >
+      자리비움 종료
+    </button>
+
+  </div>
+
+</div>
+
+  <!-- 상세 버튼 -->
+
+<button class="office-detail-btn">
+
+  상세 설정 및 기록 보기
+
+</button>
+
+<!-- 상세 패널 -->
+
+<div
+  class="detail-panel"
+  id="detailPanel"
+>
+
+  <div class="detail-panel-title">
+    인사 기록
+  </div>
+
+<div class="summary-grid">
+
+  <div
+    class="monthly-summary"
+    id="monthlySummary"
+  >
+  </div>
+
+  <div
+    class="annual-summary"
+    id="annualSummary"
+  >
+  </div>
+
+</div>
+
+<div
+  class="detail-panel-content"
+  id="attendanceList"
+>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- 설정 슬라이드 패널 -->
+
+  <!-- 내용 -->
+
+  <!-- 출근시간 -->
+
+<!-- 입사일 -->
+
+  <!-- 저장 -->
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+    <!-- 오피스 스토어 -->
+    <!-- ========================= -->
+
+<div
+  class="store-screen screen-padding screen"
+  id="storeScreen"
+  style="display:none;"
+>
+
+  <!-- 상단 -->
+
+  <div class="office-top">
+
+    <!-- 로고 -->
+
+    <div class="common-logo">
+
+      <div class="common-logo-text">
+        Study Office
+      </div>
+
+      <div class="common-logo-sub">
+        STORE
+      </div>
+
+    </div>
+
+    <!-- 통장 -->
+
+    <div class="bank-card">
+
+      <div class="bank-label">
+        통장 잔고
+      </div>
+
+      <div class="bank-money-wrap">
+
+        <i data-lucide="wallet"></i>
+
+        <div
+          class="bank-money"
+          id="storeBankMoney"
+        >
+          0원
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 스토어 본문 -->
+
+  <div class="wishlist-card">
+
+  <!-- 상단 -->
+
+  <div class="wishlist-top">
+
+    <!-- 좌측 -->
+
+    <div>
+
+      <div class="wishlist-label">
+        위시리스트
+      </div>
+
+      <div
+  class="wishlist-title"
+  id="wishlistTitle"
+>
+  아이패드 프로 11
+</div>
+
+      <div
+  class="wishlist-brand"
+  id="wishlistBrand"
+>
+  APPLE
+</div>
+
+    </div>
+
+    <!-- 이미지 -->
+
+  </div>
+
+  <!-- 달성률 -->
+
+  <div class="wishlist-progress-wrap">
+
+    <div class="wishlist-progress-text">
+
+      달성률
+      <span id="wishlistPercent">
+  68%
+</span>
+
+    </div>
+
+    <div class="wishlist-progress-bar">
+
+      <div
+  class="wishlist-progress-fill"
+  id="wishlistProgressFill"
+></div>
+
+    </div>
+
+  </div>
+
+  <!-- 하단 금액 -->
+
+  <div class="wishlist-bottom">
+
+    <div class="wishlist-money-box">
+
+      <div class="wishlist-money-label">
+        현재 금액
+      </div>
+
+      <div
+  class="wishlist-money"
+  id="wishlistCurrentMoney"
+>
+  0원
+</div>
+
+    </div>
+
+    <div class="wishlist-money-box">
+
+      <div class="wishlist-money-label">
+        목표 금액
+      </div>
+
+      <div
+  class="wishlist-money gray"
+  id="wishlistTargetMoney"
+>
+  1,599,000원
+</div>
+
+    </div>
+
+    <div class="wishlist-money-box">
+
+      <div class="wishlist-money-label">
+        남은 금액
+      </div>
+
+      <div
+  class="wishlist-money green"
+  id="wishlistRemainMoney"
+>
+  519,000원
+</div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- 카테고리 -->
+
+<div class="store-category-wrap">
+
+  <button
+  class="store-category active"
+  data-category="전체"
+>
+    전체
+  </button>
+
+  <button
+  class="store-category"
+  data-category="전자기기"
+>
+    전자기기
+  </button>
+
+  <button
+  class="store-category"
+  data-category="가전제품"
+>
+    가전제품
+  </button>
+
+  <button
+  class="store-category"
+  data-category="고양이용품"
+>
+    고양이용품
+  </button>
+
+  <button
+  class="store-category"
+  data-category="생활용품"
+>
+    생활용품
+  </button>
+
+  <button
+  class="store-category"
+  data-category="화장품"
+>
+    화장품
+  </button>
+
+</div>
+
+<!-- 상품 목록 -->
+
+<div
+  class="store-product-list"
+  id="storeProductList"
+>
+</div>
+
+</div>
+
+<div
+  class="my-screen screen-padding screen"
+  id="myScreen"
+  style="display:none;"
+>
+
+<div class="office-top">
+
+  <div class="common-logo">
+
+    <div class="common-logo-text">
+      Study Office
+    </div>
+
+    <div class="common-logo-sub">
+      MY
+    </div>
+
+  </div>
+
+</div>
+
+<div class="my-menu-list">
+
+  <button
+  class="my-menu-item"
+  id="profileMenuBtn"
+>
+    <span>프로필 관리</span>
+    <span>›</span>
+  </button>
+
+  <button
+  class="my-menu-item"
+  id="positionMenuBtn"
+>
+
+  <span>직급 및 시급</span>
+  <span>›</span>
+
+</button>
+
+  <button
+  class="my-menu-item"
+  id="goalSettingMenuBtn"
+>
+
+  <span>목표 관리</span>
+  <span>›</span>
+
+</button>
+
+  <button
+  class="my-menu-item"
+  id="workSettingMenuBtn"
+>
+  <span>근무 설정</span>
+    <span>›</span>
+  </button>
+
+  <button
+  class="my-menu-item"
+  id="attendanceMenuBtn"
+>
+
+  <span>출퇴근 기록</span>
+  <span>›</span>
+
+</button>
+
+  <button
+  class="my-menu-item"
+  id="careerMenuBtn"
+>
+
+  <span>성과 관리</span>
+  <span>›</span>
+
+</button>
+
+  <button
+  class="my-menu-item"
+  id="achievementMenuBtn"
+>
+
+  <span>구매목록</span>
+  <span>›</span>
+
+</button>
+
+<button
+  class="my-menu-item"
+  id="appSettingMenuBtn"
+>
+
+  <span>환경설정</span>
+  <span>›</span>
+
+</button>
+
+  <button
+  class="my-menu-item"
+  id="dataMenuBtn"
+>
+
+  <span>데이터 관리</span>
+  <span>›</span>
+
+</button>
+
+</div>
+
+<div
+  class="profile-panel slide-panel"
+  id="profilePanel"
+  style="display:none;"
+>
+
+  <div class="panel-header">
+
+    <button id="profileBackBtn">
+
+  <i data-lucide="chevron-left"></i>
+
+</button>
+
+    <div>
+      프로필 관리
+    </div>
+
+  </div>
+
+<div class="profile-panel-content">
+
+  <!-- 닉네임 -->
+
+  <div class="setting-input-group">
+
+    <div class="setting-input-label">
+      닉네임
+    </div>
+
+    <input
+      type="text"
+      id="nicknameInput"
+      value="지니어스"
+    >
+
+  </div>
+
+  <!-- 부서 -->
+
+  <div class="setting-input-group">
+
+    <div class="setting-input-label">
+      부서
+    </div>
+
+    <select id="departmentInput">
+
+      <option value="">
+        부서 선택
+      </option>
+
+      <option>공시부</option>
+      <option>수능부</option>
+      <option>취준부</option>
+      <option>프리랜서부</option>
+      <option>자격증부</option>
+
+    </select>
+
+  </div>
+
+  <!-- 입사일 -->
+
+  <div class="setting-input-group">
+
+    <div class="setting-input-label">
+      입사일
+    </div>
+
+    <input
+      type="date"
+      id="joinDateInput"
+    >
+
+    <div class="setting-guide">
+
+      입사일은 최초 1회만 설정 가능합니다.
+
+    </div>
+
+  </div>
+
+  <!-- 저장 -->
+
+  <button id="saveProfileBtn">
+
+    저장하기
+
+  </button>
+
+</div>
+
+</div>
+
+<div
+  class="work-setting-panel slide-panel"
+  id="workSettingPanel"
+  style="display:none;"
+>
+
+  <!-- 헤더 -->
+
+  <div class="panel-header">
+
+    <button id="workSettingBackBtn">
+
+  <i data-lucide="chevron-left"></i>
+
+</button>
+
+    <div>
+      근무 설정
+    </div>
+
+  </div>
+
+<div class="profile-panel-content">
+
+  <!-- 출근시간 -->
+
+  <div class="setting-input-group">
+
+    <div class="setting-input-label">
+      출근 시간
+    </div>
+
+    <input
+      type="time"
+      id="settingStartTime"
+      value="09:00"
+    >
+
+  </div>
+
+  <!-- 퇴근시간 -->
+
+  <div class="setting-input-group">
+
+    <div class="setting-input-label">
+      퇴근 시간
+    </div>
+
+    <input
+      type="time"
+      id="settingEndTime"
+      value="18:00"
+    >
+
+  </div>
+
+  <!-- 저장 -->
+
+  <button
+    id="saveWorkSettingBtn"
+  >
+
+    저장하기
+
+  </button>
+
+</div>
+
+</div>
+
+<div
+  class="attendance-panel slide-panel"
+  id="attendancePanel"
+  style="display:none;"
+>
+
+  <!-- 헤더 -->
+
+  <div class="panel-header">
+
+    <button
+      id="attendanceBackBtn"
+    >
+      <i data-lucide="chevron-left"></i>
+
+    </button>
+
+    <div>
+      출퇴근 기록
+    </div>
+
+  </div>
+
+  <!-- 내용 -->
+
+  <div
+    class="attendance-panel-content"
+    id="attendancePanelContent"
+  >
+  </div>
+
+</div>
+
+<div
+  class="career-panel slide-panel"
+  id="careerPanel"
+  style="display:none;"
+>
+
+  <!-- 헤더 -->
+
+  <div class="panel-header">
+
+    <button
+  id="careerBackBtn"
+>
+
+  <i data-lucide="chevron-left"></i>
+
+</button>
+
+    <div>
+      성과 관리
+    </div>
+
+  </div>
+
+  <!-- 메뉴 -->
+
+  <div class="career-menu-list">
+
+    <button
+      class="my-menu-item"
+      id="monthlyMenuBtn"
+    >
+
+      <span>월말평가 기록</span>
+      <span>›</span>
+
+    </button>
+
+    <button
+      class="my-menu-item"
+      id="promotionMenuBtn"
+    >
+
+      <span>승진 기록</span>
+      <span>›</span>
+
+    </button>
+
+    <button
+      class="my-menu-item"
+      id="bonusMenuBtn"
+    >
+
+      <span>성과금 기록</span>
+      <span>›</span>
+
+    </button>
+
+  </div>
+
+</div>
+
+<div
+  class="monthly-panel slide-panel"
+  id="monthlyPanel"
+  style="display:none;"
+>
+
+  <!-- 헤더 -->
+
+  <div class="panel-header">
+
+    <button
+      id="monthlyBackBtn"
+    >
+      <i data-lucide="chevron-left"></i>
+    </button>
+
+    <div>
+      월말평가 기록
+    </div>
+
+  </div>
+
+  <!-- 목록 -->
+
+  <div
+    class="career-list"
+    id="monthlyList"
+  >
+
+    <div class="career-item">
+
+      <div class="career-date">
+        2026.05
+      </div>
+
+      <div class="career-grade">
+        A 평가
+      </div>
+
+      <div class="career-desc">
+        성과금 +300,000원
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div
+  class="promotion-panel slide-panel"
+  id="promotionPanel"
+  style="display:none;"
+>
+
+  <div class="panel-header">
+
+    <button
+      id="promotionBackBtn"
+    >
+      <i data-lucide="chevron-left"></i>
+    </button>
+
+    <div>
+      승진 기록
+    </div>
+
+  </div>
+
+  <div
+    class="career-list"
+    id="promotionList"
+  >
+  </div>
+
+</div>
+
+<div
+  class="bonus-panel slide-panel"
+  id="bonusPanel"
+  style="display:none;"
+>
+
+  <div class="panel-header">
+
+    <button
+      id="bonusBackBtn"
+    >
+      <i data-lucide="chevron-left"></i>
+    </button>
+
+    <div>
+      성과금 기록
+    </div>
+
+  </div>
+
+  <div
+    class="career-list"
+    id="bonusList"
+  >
+  </div>
+
+</div>
+
+<div
+  class="achievement-panel slide-panel"
+  id="achievementPanel"
+  style="display:none;"
+>
+
+  <div class="panel-header">
+
+    <button
+      id="achievementBackBtn"
+    >
+
+      <i data-lucide="chevron-left"></i>
+
+    </button>
+
+    <div>
+      구매 목록
+    </div>
+
+  </div>
+
+  <div
+    class="career-list"
+    id="achievementList"
+  >
+  </div>
+
+</div>
+
+<div
+  class="
+    position-panel
+    slide-panel
+  "
+  id="positionPanel"
+  style="display:none;"
+>
+
+  <div class="panel-header">
+
+    <button
+      id="positionBackBtn"
+    >
+
+      <i data-lucide="chevron-left"></i>
+
+    </button>
+
+    <div>
+      직급 및 시급
+    </div>
+
+  </div>
+
+  <div
+    class="career-list"
+    id="positionContent"
+  >
+  </div>
+
+</div>
+
+<div
+  class="
+    goal-setting-panel
+    slide-panel
+  "
+  id="goalSettingPanel"
+  style="display:none;"
+>
+
+  <!-- 헤더 -->
+
+  <div class="panel-header">
+
+    <button
+      id="goalSettingBackBtn"
+    >
+
+      <i data-lucide="chevron-left"></i>
+
+    </button>
+
+    <div>
+      목표 관리
+    </div>
+
+  </div>
+
+  <!-- 내용 -->
+
+<div class="goal-add-box">
+
+  <div class="setting-input-group">
+
+    <div class="setting-input-label">
+      목표 이름
+    </div>
+
+    <input
+      type="text"
+      id="goalTitleInput"
+      placeholder="목표 입력"
+    >
+
+  </div>
+
+  <div class="setting-input-group">
+
+    <div class="setting-input-label">
+      목표 날짜
+    </div>
+
+    <input
+      type="date"
+      id="goalDateInput"
+    >
+
+  </div>
+
+  <button id="addGoalBtn">
+
+    목표 추가
+
+  </button>
+
+</div>
+
+<div
+  class="career-list"
+  id="goalList"
+>
+</div>
+
+</div>
+
+<div
+  class="
+    app-setting-panel
+    slide-panel
+  "
+  id="appSettingPanel"
+  style="display:none;"
+>
+
+  <!-- 헤더 -->
+
+  <div class="panel-header">
+
+    <button
+      id="appSettingBackBtn"
+    >
+
+      <i data-lucide="chevron-left"></i>
+
+    </button>
+
+    <div>
+      환경설정
+    </div>
+
+  </div>
+
+  <!-- 메뉴 -->
+
+  <div class="my-menu-list">
+
+    <button
+      class="my-menu-item"
+      id="darkModeBtn"
+    >
+
+      <span>다크모드</span>
+
+      <span id="darkModeText">
+        OFF
+      </span>
+
+    </button>
+
+    <button
+      class="my-menu-item"
+      id="vibrationBtn"
+    >
+
+      <span>알림 진동</span>
+
+      <span id="vibrationText">
+        ON
+      </span>
+
+    </button>
+
+    <button
+      class="my-menu-item"
+      id="animationBtn"
+    >
+
+      <span>애니메이션</span>
+
+      <span id="animationText">
+        ON
+      </span>
+
+    </button>
+
+  </div>
+
+</div>
+
+<div
+  class="
+    data-panel
+    slide-panel
+  "
+  id="dataPanel"
+  style="display:none;"
+>
+
+  <!-- 헤더 -->
+
+  <div class="panel-header">
+
+    <button
+      id="dataBackBtn"
+    >
+
+      <i data-lucide="chevron-left"></i>
+
+    </button>
+
+    <div>
+      데이터 관리
+    </div>
+
+  </div>
+
+  <!-- 내용 -->
+
+  <div class="profile-panel-content">
+
+    <!-- 테스트 기능 -->
+
+    <div class="data-section-title">
+
+      테스트 기능
+
+    </div>
+
+    <button
+      class="data-btn"
+      id="testMoneyBtn"
+    >
+
+      테스트 머니 +100만원
+
+    </button>
+
+    <!-- 초기화 -->
+
+    <div class="data-section-title">
+
+      데이터 초기화
+
+    </div>
+
+    <button
+      class="danger-btn"
+      id="resetPurchaseBtn"
+    >
+
+      구매목록 초기화
+
+    </button>
+
+    <button
+      class="danger-btn"
+      id="resetGoalBtn"
+    >
+
+      목표 초기화
+
+    </button>
+
+    <button
+      class="danger-btn"
+      id="resetAllBtn"
+    >
+
+      전체 데이터 초기화
+
+    </button>
+
+  </div>
+
+</div>
+
+</div>
+
+  <!-- ========================= -->
+  <!-- 하단 탭 -->
+  <!-- ========================= -->
+
+  <nav class="bottom-nav">
+
+    <button
+  class="nav-item active"
+  id="homeTab"
+>
+
+      <i data-lucide="house"></i>
+
+      <span>홈</span>
+
+    </button>
+
+    <button
+  class="nav-item"
+  id="officeTab"
+>
+
+      <i data-lucide="briefcase-business"></i>
+
+      <span>오피스</span>
+
+    </button>
+
+    <button
+  class="nav-item"
+  id="storeTab"
+>
+
+      <i data-lucide="shopping-bag"></i>
+
+      <span>상점</span>
+
+    </button>
+
+    <button
+  class="nav-item"
+  id="settingTab"
+>
+
+      <i data-lucide="settings"></i>
+
+      <span>MY</span>
+
+    </button>
+
+  </nav>
+
+  <!-- JS -->
+
+<script src="state2.js" defer></script>
+<script src="elements2.js" defer></script>
+<script src="utils2.js" defer></script>
+
+<script src="ui2.js" defer></script>
+<script src="toast2.js" defer></script>
+<script src="attendance2.js" defer></script>
+<script src="leave2.js" defer></script>
+<script src="work2.js" defer></script>
+<script src="tabs2.js" defer></script>
+<script src="rank2.js" defer></script>
+<script src="products2.js" defer></script>
+<script src="store2.js" defer></script>
+<script src="setting2.js" defer></script>
+
+<!-- 복원은 거의 마지막 -->
+<script src="restore2.js" defer></script>
+
+<!-- 진짜 마지막 -->
+<script src="init2.js" defer></script>
+
+<div id="toast"></div>
+
+<!-- 구매 완료 팝업 -->
+
+<div
+  class="purchase-popup"
+  id="purchasePopup"
+>
+
+  <div class="purchase-popup-check">
+
+    ✔ 체크승인
+
+  </div>
+
+  <div
+    class="purchase-popup-price"
+    id="purchasePopupPrice"
+  >
+  </div>
+
+  <div
+    class="purchase-popup-product"
+    id="purchasePopupProduct"
+  >
+  </div>
+
+</div>
+
+<div
+  class="purchase-banner"
+  id="purchaseBanner"
+>
+
+  <div
+    class="purchase-banner-check"
+  >
+
+    [체크승인]
+
+  </div>
+
+  <div
+    class="purchase-banner-user"
+    id="purchaseBannerUser"
+  >
+  </div>
+
+  <div
+    class="purchase-banner-info"
+    id="purchaseBannerInfo"
+  >
+  </div>
+
+</div>
+
+<div
+  class="wishlist-complete-popup"
+  id="wishlistCompletePopup"
+>
+
+  <div class="wishlist-complete-icon">
+
+    🎉
+
+  </div>
+
+  <div class="wishlist-complete-title">
+
+    목표 달성!
+
+  </div>
+
+  <div
+    class="wishlist-complete-product"
+    id="wishlistCompleteProduct"
+  >
+  </div>
+
+  <div class="wishlist-complete-sub">
+
+    구매 가능 상태입니다
+
+  </div>
+
+</div>
+
+</body>
+
+</html>
