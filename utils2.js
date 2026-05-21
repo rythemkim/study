@@ -797,6 +797,22 @@ getCurrentMonth();
 
 else if(lastMonthKey !== currentMonth){
 
+  // 월 데이터 없으면 종료
+
+  if(!monthlyStats[lastMonthKey]){
+
+    lastMonthKey =
+    currentMonth;
+
+    localStorage.setItem(
+      "lastMonthKey",
+      lastMonthKey
+    );
+
+    return;
+
+  }
+
   // 정산 금액 저장
 
   const settledPay =
@@ -941,6 +957,8 @@ settledPay + bonus;
   // 월급 정산 알림
   // =========================
 
+  setTimeout(()=>{
+
   showToast(
 `이번 달 급여가 정산되었습니다.
 
@@ -949,9 +967,11 @@ settledPay + bonus;
 
 성과급
 +${bonus.toLocaleString()}원`
-);
+  );
 
-updateTotalInfo();
+  updateTotalInfo();
+
+},1000);
 
 }
 

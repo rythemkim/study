@@ -60,6 +60,17 @@ let awaySeconds = 600;
 let awayTimer = null;
 
 // =========================
+// 자리비움 패널티
+// =========================
+
+let awayPenaltyMinutes =
+Number(
+  localStorage.getItem(
+    "awayPenaltyMinutes"
+  )
+) || 0;
+
+// =========================
 // 근무 시작 timestamp
 // =========================
 
@@ -274,12 +285,6 @@ Number(
     "lastAnnualHours"
   )
 ) || 0;
-
-
-
-// =========================
-// D-day
-// =========================
 
 // =========================
 // 목표 리스트

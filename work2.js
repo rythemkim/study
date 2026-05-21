@@ -318,6 +318,15 @@ renderAnnualSummary();
 
 isWorking = false;
 
+// 자리비움 초기화
+
+awayPenaltyMinutes = 0;
+
+localStorage.setItem(
+  "awayPenaltyMinutes",
+  0
+);
+
 playVibration(180);
 
 // 저장 삭제
@@ -747,11 +756,32 @@ saveState();
 
     if(awaySeconds <= 0){
 
-      clearInterval(
-        awayTimer
-      );
+  clearInterval(
+    awayTimer
+  );
 
-    }
+  awayPenaltyMinutes++;
+
+  localStorage.setItem(
+    "awayPenaltyMinutes",
+    awayPenaltyMinutes
+  );
+
+  showToast(
+    `자리비움 시간이 감소했습니다.
+현재 ${
+      Math.max(
+        1,
+        10 - awayPenaltyMinutes
+      )
+    }분`
+  );
+
+playVibration(
+  [80,40,80]
+);
+
+}
 
   },1000);
 
@@ -1033,6 +1063,19 @@ Number(
     )
   ) || false;
 
+awayPenaltyMinutes =
+Number(
+  localStorage.getItem(
+    "awayPenaltyMinutes"
+  )
+) || 0;
+
+awaySeconds =
+
+600
+-
+(awayPenaltyMinutes * 60);
+
   const savedAwayCount =
 localStorage.getItem(
   "awayCount"
@@ -1042,12 +1085,5 @@ awayCount =
 savedAwayCount !== null
 ? Number(savedAwayCount)
 : 5;
-
-  awaySeconds =
-  Number(
-    localStorage.getItem(
-      "awaySeconds"
-    )
-  ) || 600;
 
 }
