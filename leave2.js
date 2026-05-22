@@ -355,8 +355,14 @@ function useSickLeave(){
 
   // 현재 근무시간
 
-  const workedSeconds =
-getWorkedSecondsV2();
+  let workedSeconds = 0;
+
+if(isWorking){
+
+  workedSeconds =
+  getWorkedSecondsV2();
+
+}
 
   // 기본 하루 급여
 
@@ -541,6 +547,8 @@ localStorage.setItem(
   updateLeaveUI();
 
 updateMonthlySummary();
+
+updateTotalInfo();
 
   // =========================
   // 기록 저장

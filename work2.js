@@ -262,17 +262,10 @@ localStorage.setItem(
 
   monthlyPay += payNumber;
 
-totalPay += payNumber;
-
 localStorage.setItem(
   "monthlyPay",
   monthlyPay
 );
-
-  localStorage.setItem(
-    "totalPay",
-    totalPay
-  );
 
   updateTotalInfo();
 
