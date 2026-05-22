@@ -85,7 +85,23 @@
 
         <div class="profile-image">
 
-          <i data-lucide="user-round"></i>
+  <img
+  id="profilePreview"
+  class="profile-preview"
+  style="display:none;"
+>
+
+  <i
+    data-lucide="user-round"
+    id="defaultProfileIcon"
+  ></i>
+
+  <input
+    type="file"
+    id="profileImageInput"
+    accept="image/*"
+    hidden
+  >
 
         </div>
 
@@ -520,9 +536,18 @@
 
     <div class="office-profile-image">
 
-      <i data-lucide="user-round"></i>
+  <img
+    id="officeProfilePreview"
+    class="profile-preview"
+    style="display:none;"
+  >
 
-      </div>
+  <i
+    data-lucide="user-round"
+    id="officeDefaultProfileIcon"
+  ></i>
+
+</div>
 
   <div class="office-profile-info">
 

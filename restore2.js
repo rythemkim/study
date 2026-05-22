@@ -221,3 +221,51 @@ if(isAway){
 }
 
 }
+
+// =========================
+// 프로필 이미지
+// =========================
+
+const savedProfileImage =
+localStorage.getItem(
+  "profileImage"
+);
+
+if(savedProfileImage){
+
+  profilePreview.src =
+  savedProfileImage;
+
+  profilePreview.style.display =
+  "block";
+
+  defaultProfileIcon.style.display =
+  "none";
+
+}
+
+if(savedProfileImage){
+
+  // 홈
+
+  profilePreview.src =
+  savedProfileImage;
+
+  profilePreview.style.display =
+  "block";
+
+  defaultProfileIcon.style.display =
+  "none";
+
+  // 오피스
+
+  officeProfilePreview.src =
+  savedProfileImage;
+
+  officeProfilePreview.style.display =
+  "block";
+
+  officeDefaultProfileIcon.style.display =
+  "none";
+
+}

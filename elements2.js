@@ -110,6 +110,38 @@ document.querySelector(
   ".office-state"
 );
 
+// 프로필 이미지
+
+const profilePreview =
+document.getElementById(
+  "profilePreview"
+);
+
+const profileImageInput =
+document.getElementById(
+  "profileImageInput"
+);
+
+const defaultProfileIcon =
+document.getElementById(
+  "defaultProfileIcon"
+);
+
+const profileImage =
+document.querySelector(
+  ".profile-image"
+);
+
+const officeProfilePreview =
+document.getElementById(
+  "officeProfilePreview"
+);
+
+const officeDefaultProfileIcon =
+document.getElementById(
+  "officeDefaultProfileIcon"
+);
+
 // 화면
 
 const homeScreen =

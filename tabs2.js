@@ -1,3 +1,15 @@
+function resetScroll(){
+
+  window.scrollTo({
+
+  top:0,
+
+  behavior:"smooth"
+
+});
+
+}
+
 // =========================
 // 홈 탭
 // =========================
@@ -29,6 +41,8 @@ myScreen.style.display =
     homeTab.classList.add(
       "active"
     );
+
+resetScroll();
 
   }
 );
@@ -65,6 +79,8 @@ myScreen.style.display =
       "active"
     );
 
+resetScroll();
+
   }
 );
 
@@ -99,6 +115,8 @@ myScreen.style.display =
     storeTab.classList.add(
       "active"
     );
+
+resetScroll();
 
   }
 );
@@ -140,6 +158,8 @@ settingTab.addEventListener(
     settingTab.classList.add(
       "active"
     );
+
+resetScroll();
 
   }
 );

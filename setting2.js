@@ -623,6 +623,67 @@ addGoalBtn
 );
 
 // =========================
+// 프로필 이미지 변경
+// =========================
+
+profileImage.addEventListener(
+  "click",
+  ()=>{
+
+    profileImageInput.click();
+
+  }
+);
+
+profileImageInput.addEventListener(
+  "change",
+  (event)=>{
+
+    const file =
+    event.target.files[0];
+
+    if(!file){
+      return;
+    }
+
+    const reader =
+    new FileReader();
+
+    reader.onload = (e)=>{
+
+      const imageData =
+      e.target.result;
+
+      profilePreview.src =
+      imageData;
+
+officeProfilePreview.src =
+imageData;
+
+officeProfilePreview.style.display =
+"block";
+
+officeDefaultProfileIcon.style.display =
+"none";
+      profilePreview.style.display =
+      "block";
+
+      defaultProfileIcon.style.display =
+      "none";
+
+      localStorage.setItem(
+        "profileImage",
+        imageData
+      );
+
+    };
+
+    reader.readAsDataURL(file);
+
+  }
+);
+
+// =========================
 // 환경설정
 // =========================
 
