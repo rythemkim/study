@@ -142,6 +142,13 @@ document.getElementById(
   "officeDefaultProfileIcon"
 );
 
+// 오늘의 목표
+
+const goalMemoText =
+document.getElementById(
+  "goalMemoText"
+);
+
 // 화면
 
 const homeScreen =

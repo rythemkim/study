@@ -39,6 +39,9 @@ let restSeconds = 1800;
 
 let restTimer = null;
 
+let restStartTimestamp =
+0;
+
 // =========================
 // 점심
 // =========================
@@ -46,6 +49,9 @@ let restTimer = null;
 let lunchSeconds = 1800;
 
 let lunchTimer = null;
+
+let lunchStartTimestamp =
+0;
 
 // =========================
 // 자리비움
@@ -58,6 +64,9 @@ let awayCount = 5;
 let awaySeconds = 600;
 
 let awayTimer = null;
+
+let awayStartTimestamp =
+0;
 
 // =========================
 // 자리비움 패널티
@@ -80,14 +89,6 @@ Number(
     "workStartTimestamp"
   )
 ) || null;
-
-// =========================
-// 시간
-// =========================
-
-let hour = 0;
-let minute = 0;
-let second = 0;
 
 // =========================
 // 기본 시급
@@ -224,6 +225,13 @@ let monthlyPay =
 Number(
   localStorage.getItem(
     "monthlyPay"
+  )
+) || 0;
+
+let totalBreakSeconds =
+Number(
+  localStorage.getItem(
+    "totalBreakSeconds"
   )
 ) || 0;
 

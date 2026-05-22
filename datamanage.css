@@ -633,3 +633,31 @@ opacity 0.7s ease;
   background:#111;
 
 }
+
+.dark-mode .goal-memo-card{
+
+  background:#1e1e1e;
+
+}
+
+.dark-mode .goal-memo-text{
+
+  color:white;
+
+}
+
+.dark-mode .goal-memo-card{
+
+  background:#1f1f1f;
+
+  color:white;
+
+}
+
+.dark-mode .goal-memo-card{
+
+  background:#1f1f1f;
+
+  color:white;
+
+}

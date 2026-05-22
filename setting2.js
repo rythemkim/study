@@ -684,6 +684,34 @@ officeDefaultProfileIcon.style.display =
 );
 
 // =========================
+// 오늘의 목표
+// =========================
+
+goalMemoText.addEventListener(
+  "click",
+  ()=>{
+
+    const newMemo =
+    prompt(
+      "목표 한마디를 입력하세요"
+    );
+
+    if(!newMemo){
+      return;
+    }
+
+    goalMemoText.textContent =
+    newMemo;
+
+    localStorage.setItem(
+      "goalMemo",
+      newMemo
+    );
+
+  }
+);
+
+// =========================
 // 환경설정
 // =========================
 

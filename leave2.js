@@ -264,42 +264,6 @@ function useHalfLeave(){
 
   updateLeaveUI();
 
-  // 상태별 기록
-
-  const status =
-  halfType === "am"
-  ? "half_am"
-  : "half_pm";
-
-  // 기록 생성
-
-  const attendanceRecord = {
-
-    date: today,
-
-    status: status,
-
-    start: "-",
-
-    end: "-",
-
-    totalTime: "04:00:00",
-
-    pay: "반차"
-
-  };
-
-  savedRecords.push(
-    attendanceRecord
-  );
-
-  localStorage.setItem(
-    "attendanceRecords",
-    JSON.stringify(
-      savedRecords
-    )
-  );
-
   renderAttendance();
 
 playVibration(
@@ -392,7 +356,7 @@ function useSickLeave(){
   // 현재 근무시간
 
   const workedSeconds =
-  getWorkedSeconds();
+getWorkedSecondsV2();
 
   // 기본 하루 급여
 
@@ -406,6 +370,9 @@ getHourlyPay() * 8;
   // =========================
   // 근무중 병가
   // =========================
+
+const sickStartTime =
+startWorkTime;
 
   if(isWorking){
 
@@ -506,11 +473,19 @@ getHourlyPay() * 8;
 
     isWorking = false;
 
+totalBreakSeconds = 0;
+
+localStorage.setItem(
+  "totalBreakSeconds",
+  0
+);
+
 playVibration(180);
 
-    localStorage.removeItem(
-      "isWorking"
-    );
+    localStorage.setItem(
+  "isWorking",
+  "false"
+);
 
     localStorage.removeItem(
       "workStartTimestamp"
@@ -565,6 +540,8 @@ localStorage.setItem(
 
   updateLeaveUI();
 
+updateMonthlySummary();
+
   // =========================
   // 기록 저장
   // =========================
@@ -575,10 +552,7 @@ localStorage.setItem(
 
     status: "sick",
 
-    start:
-    isWorking
-    ? startWorkTime
-    : "-",
+    start: sickStartTime || "-",
 
     end: "-",
 
@@ -606,10 +580,6 @@ localStorage.setItem(
   // =========================
   // UI 초기화
   // =========================
-
-  hour = 0;
-  minute = 0;
-  second = 0;
 
   workTime.textContent =
   "00:00:00";
@@ -680,5 +650,25 @@ function saveState(){
     "awaySeconds",
     awaySeconds
   );
+
+localStorage.setItem(
+  "restStartTimestamp",
+  restStartTimestamp
+);
+
+localStorage.setItem(
+  "lunchStartTimestamp",
+  lunchStartTimestamp
+);
+
+localStorage.setItem(
+  "awayStartTimestamp",
+  awayStartTimestamp
+);
+
+localStorage.setItem(
+  "totalBreakSeconds",
+  totalBreakSeconds
+);
 
 }

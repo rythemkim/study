@@ -714,7 +714,7 @@ animateNumber(
 
   // 야근 상태
 
-  if(hour >= 18 && minute >= 10){
+  if(workedSeconds >= 33000){
 
     setWorkState("overtime");
 

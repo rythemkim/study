@@ -25,6 +25,16 @@ function startWork(){
 
   isWorking = true;
 
+isResting = false;
+isLunch = false;
+
+totalBreakSeconds = 0;
+
+localStorage.setItem(
+  "totalBreakSeconds",
+  0
+);
+
 playVibration(70);
 
 restUsed = false;
@@ -65,7 +75,12 @@ isAway = false;
 
 awayCount = 5;
 
-awaySeconds = 600;
+awaySeconds =
+Math.max(
+  60,
+  600 -
+  (awayPenaltyMinutes * 60)
+);
 
 updateAwayUI();
 
@@ -318,6 +333,15 @@ renderAnnualSummary();
 
 isWorking = false;
 
+// 휴식 시간 제외
+
+totalBreakSeconds = 0;
+
+localStorage.setItem(
+  "totalBreakSeconds",
+  0
+);
+
 // 자리비움 초기화
 
 awayPenaltyMinutes = 0;
@@ -382,9 +406,13 @@ endBtn.style.opacity =
   dailyPay.textContent,
 
   status:
-  isLate
-  ? "late"
-  : "normal"
+todayHalfType === "am"
+? "half_am"
+: todayHalfType === "pm"
+? "half_pm"
+: isLate
+? "late"
+: "normal"
 
 };
 
@@ -422,10 +450,6 @@ ${currentPay}
   // =========================
   // 초기화
   // =========================
-
-  hour = 0;
-  minute = 0;
-  second = 0;
 
   workTime.textContent =
   "00:00:00";
@@ -515,6 +539,14 @@ if(!confirmRest){
 }
 
   isResting = true;
+
+restStartTimestamp =
+Date.now();
+
+localStorage.setItem(
+  "restStartTimestamp",
+  restStartTimestamp
+);
 
 playVibration(60);
 
@@ -626,6 +658,14 @@ if(isAway){
 
   isLunch = true;
 
+lunchStartTimestamp =
+Date.now();
+
+localStorage.setItem(
+  "lunchStartTimestamp",
+  lunchStartTimestamp
+);
+
 playVibration(60);
 
 setWorkState("lunch");
@@ -727,6 +767,14 @@ function startAway(){
 
   isAway = true;
 
+awayStartTimestamp =
+Date.now();
+
+localStorage.setItem(
+  "awayStartTimestamp",
+  awayStartTimestamp
+);
+
 playVibration(50);
 
 saveState();
@@ -743,47 +791,75 @@ saveState();
 
   // 타이머 시작
 
-  awayTimer =
-  setInterval(()=>{
+awayTimer =
+setInterval(()=>{
+
+  if(awaySeconds > 0){
 
     awaySeconds--;
 
     updateAwayUI();
 
-saveState();
+    saveState();
 
-    // 0되면 멈춤
+  }
 
-    if(awaySeconds <= 0){
+  // 0되면 자동 종료
 
-  clearInterval(
-    awayTimer
-  );
+  if(awaySeconds <= 0){
 
-  awayPenaltyMinutes++;
+    clearInterval(
+      awayTimer
+    );
 
-  localStorage.setItem(
-    "awayPenaltyMinutes",
-    awayPenaltyMinutes
-  );
+    // 자리비움 종료
 
-  showToast(
-    `자리비움 시간이 감소했습니다.
+    isAway = false;
+
+    // 패널티 증가
+
+    awayPenaltyMinutes++;
+
+    localStorage.setItem(
+      "awayPenaltyMinutes",
+      awayPenaltyMinutes
+    );
+
+    // 다음 자리비움 시간 갱신
+
+    awaySeconds =
+    Math.max(
+      60,
+      600 -
+      (awayPenaltyMinutes * 60)
+    );
+
+    updateAwayUI();
+
+    saveState();
+
+    // 근무 상태 복귀
+
+    setWorkState("working");
+
+    showToast(
+`자리비움 시간이 감소했습니다.
+
 현재 ${
-      Math.max(
-        1,
-        10 - awayPenaltyMinutes
-      )
-    }분`
-  );
+  Math.max(
+    1,
+    10 - awayPenaltyMinutes
+  )
+}분`
+    );
 
-playVibration(
-  [80,40,80]
-);
+    playVibration(
+      [80,40,80]
+    );
 
-}
+  }
 
-  },1000);
+},1000);
 
 }
 
@@ -799,9 +875,30 @@ function endLunch(){
     lunchTimer
   );
 
+localStorage.removeItem(
+  "lunchStartTimestamp"
+);
+
   // 상태 종료
 
   isLunch = false;
+
+const lunchSecondsUsed =
+Math.floor(
+  (
+    Date.now()
+    -
+    lunchStartTimestamp
+  ) / 1000
+);
+
+totalBreakSeconds +=
+lunchSecondsUsed;
+
+localStorage.setItem(
+  "totalBreakSeconds",
+  totalBreakSeconds
+);
 
 playVibration(100);
 
@@ -844,6 +941,10 @@ function endRest(){
     restTimer
   );
 
+localStorage.removeItem(
+  "restStartTimestamp"
+);
+
   // 상태 종료
 
   isResting = false;
@@ -851,6 +952,27 @@ function endRest(){
 playVibration(100);
 
   restUsed = true;
+
+// 실제 휴식 시간 계산
+
+const restSecondsUsed =
+Math.floor(
+  (
+    Date.now()
+    -
+    restStartTimestamp
+  ) / 1000
+);
+
+// 비근무 누적
+
+totalBreakSeconds +=
+restSecondsUsed;
+
+localStorage.setItem(
+  "totalBreakSeconds",
+  totalBreakSeconds
+);
 
   // 00:00 유지
 
@@ -895,11 +1017,30 @@ function endAway(){
     awayTimer
   );
 
-playVibration(100);
+localStorage.removeItem(
+  "awayStartTimestamp"
+);
 
   // 상태 종료
 
   isAway = false;
+
+const awaySecondsUsed =
+Math.floor(
+  (
+    Date.now()
+    -
+    awayStartTimestamp
+  ) / 1000
+);
+
+totalBreakSeconds +=
+awaySecondsUsed;
+
+localStorage.setItem(
+  "totalBreakSeconds",
+  totalBreakSeconds
+);
 
 playVibration(100);
 
@@ -907,7 +1048,12 @@ saveState();
 
   // 타이머 초기화
 
-  awaySeconds = 600;
+  awaySeconds =
+Math.max(
+  60,
+  600 -
+  (awayPenaltyMinutes * 60)
+);
 
   updateAwayUI();
 
@@ -920,44 +1066,153 @@ saveState();
 }
 
 // =========================
+// 휴식 복구
+// =========================
+
+function resumeRestTimer(){
+
+  clearInterval(
+    restTimer
+  );
+
+  restTimer =
+  setInterval(()=>{
+
+    restSeconds--;
+
+    updateRestUI();
+
+    saveState();
+
+    if(restSeconds <= 0){
+
+      endRest();
+
+      showToast(
+        "휴식이 종료되었습니다."
+      );
+
+    }
+
+  },1000);
+
+}
+
+// =========================
+// 점심 복구
+// =========================
+
+function resumeLunchTimer(){
+
+  clearInterval(
+    lunchTimer
+  );
+
+  lunchTimer =
+  setInterval(()=>{
+
+    lunchSeconds--;
+
+    updateLunchUI();
+
+    saveState();
+
+    if(lunchSeconds <= 0){
+
+      endLunch();
+
+      showToast(
+        "점심시간이 종료되었습니다."
+      );
+
+    }
+
+  },1000);
+
+}
+
+// =========================
+// 자리비움 복구
+// =========================
+
+function resumeAwayTimer(){
+
+  clearInterval(
+    awayTimer
+  );
+
+  awayTimer =
+setInterval(()=>{
+
+  if(awaySeconds > 0){
+
+    awaySeconds--;
+
+    updateAwayUI();
+
+    saveState();
+
+  }
+
+    if(awaySeconds <= 0){
+
+      clearInterval(
+        awayTimer
+      );
+
+      isAway = false;
+
+      awayPenaltyMinutes++;
+
+      localStorage.setItem(
+        "awayPenaltyMinutes",
+        awayPenaltyMinutes
+      );
+
+      awaySeconds =
+      Math.max(
+        60,
+        600 -
+        (awayPenaltyMinutes * 60)
+      );
+
+      updateAwayUI();
+
+      saveState();
+
+      setWorkState("working");
+
+      showToast(
+        "자리비움 시간이 감소했습니다."
+      );
+
+    }
+
+  },1000);
+
+}
+
+// =========================
 // 시계 업데이트
 // =========================
 
 function updateClock(){
 
   if(
-  !isWorking
-  ||
-  isResting
-  ||
-  isLunch
-  ||
-  isAway
-){
-  return;
-}
-
-  second++;
-
-  if(second >= 60){
-
-    second = 0;
-
-    minute++;
-
-  }
-
-  if(minute >= 60){
-
-    minute = 0;
-
-    hour++;
-
+    !isWorking
+    ||
+    isResting
+    ||
+    isLunch
+    ||
+    isAway
+  ){
+    return;
   }
 
   updateWorkUI();
 
-updateRemainingTime();
+  updateRemainingTime();
 
 }
 
@@ -1007,6 +1262,13 @@ Number(
   )
 ) || 0;
 
+totalBreakSeconds =
+Number(
+  localStorage.getItem(
+    "totalBreakSeconds"
+  )
+) || 0;
+
 workStartTimestamp =
 Number(
   localStorage.getItem(
@@ -1034,6 +1296,27 @@ Number(
       "restSeconds"
     )
   ) || 1800;
+
+restStartTimestamp =
+Number(
+  localStorage.getItem(
+    "restStartTimestamp"
+  )
+) || 0;
+
+lunchStartTimestamp =
+Number(
+  localStorage.getItem(
+    "lunchStartTimestamp"
+  )
+) || 0;
+
+awayStartTimestamp =
+Number(
+  localStorage.getItem(
+    "awayStartTimestamp"
+  )
+) || 0;
 
   isLunch =
   JSON.parse(
@@ -1070,11 +1353,15 @@ Number(
   )
 ) || 0;
 
-awaySeconds =
+const baseAwaySeconds =
+Math.max(
+  60,
+  600 -
+  (awayPenaltyMinutes * 60)
+);
 
-600
--
-(awayPenaltyMinutes * 60);
+awaySeconds =
+baseAwaySeconds;
 
   const savedAwayCount =
 localStorage.getItem(
@@ -1085,5 +1372,68 @@ awayCount =
 savedAwayCount !== null
 ? Number(savedAwayCount)
 : 5;
+
+if(isResting && restStartTimestamp){
+
+  const elapsed =
+  Math.floor(
+    (
+      Date.now()
+      -
+      restStartTimestamp
+    ) / 1000
+  );
+
+  restSeconds =
+  Math.max(
+    1800 - elapsed,
+    0
+  );
+
+  resumeRestTimer();
+
+}
+
+if(isLunch && lunchStartTimestamp){
+
+  const elapsed =
+  Math.floor(
+    (
+      Date.now()
+      -
+      lunchStartTimestamp
+    ) / 1000
+  );
+
+  lunchSeconds =
+  Math.max(
+    1800 - elapsed,
+    0
+  );
+
+  resumeLunchTimer();
+
+}
+
+if(isAway && awayStartTimestamp){
+
+  const elapsed =
+  Math.floor(
+    (
+      Date.now()
+      -
+      awayStartTimestamp
+    ) / 1000
+  );
+
+  awaySeconds =
+  Math.max(
+    awaySeconds - elapsed,
+    0
+  );
+
+  resumeAwayTimer();
+
+}
 
 }

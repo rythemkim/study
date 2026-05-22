@@ -129,11 +129,11 @@ loadState();
 
 restoreUI();
 
+initMonthlyStats();
+
 checkTimeReset();
 
 checkMonthChange();
-
-initMonthlyStats();
 
 updateWeeklyTime();
 
@@ -175,64 +175,6 @@ updateRemainingTime();
 renderProducts();
 
 updateWishlistUI();
-
-// =========================
-// 위시리스트 복원
-// =========================
-
-const savedWishlist =
-localStorage.getItem(
-  "wishlistProduct"
-);
-
-if(savedWishlist){
-
-  wishlistProduct =
-  JSON.parse(savedWishlist);
-
-  const wishlistTitleValue =
-  wishlistProduct.name;
-
-  const wishlistBrandValue =
-  wishlistProduct.brand;
-
-  const wishlistPrice =
-  wishlistProduct.price;
-
-  wishlistTitle.textContent =
-  wishlistTitleValue;
-
-  wishlistBrand.textContent =
-  wishlistBrandValue;
-
-  wishlistTargetMoney.textContent =
-  `${wishlistPrice.toLocaleString()}원`;
-
-  const remain =
-  Math.max(
-    0,
-    wishlistPrice - totalPay
-  );
-
-  wishlistRemainMoney.textContent =
-  `${remain.toLocaleString()}원`;
-
-  const percent =
-  Math.min(
-    100,
-    Math.floor(
-      (totalPay / wishlistPrice)
-      * 100
-    )
-  );
-
-  wishlistPercent.textContent =
-  `${percent}%`;
-
-  wishlistProgressFill.style.width =
-  `${percent}%`;
-
-}
 
 updateDarkMode();
 

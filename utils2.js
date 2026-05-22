@@ -649,6 +649,14 @@ function updateDday(){
   const today =
   new Date();
 
+target.setHours(
+  0,0,0,0
+);
+
+today.setHours(
+  0,0,0,0
+);
+
   const diff =
   Math.ceil(
     (target - today)
@@ -754,7 +762,7 @@ function checkTimeReset(){
   getCurrentWeekKey();
 
   const currentMonth =
-getCurrentMonth();
+  getCurrentMonth();
 
   // =========================
   // 주간 초기화
@@ -779,187 +787,233 @@ getCurrentMonth();
 
   }
 
- if(
-  !lastMonthKey
-){
+  // =========================
+  // 첫 실행 월 저장
+  // =========================
 
-  lastMonthKey =
-  currentMonth;
-
-  localStorage.setItem(
-    "lastMonthKey",
-    currentMonth
-  );
-
-  return;
-
-}
-
-else if(lastMonthKey !== currentMonth){
-
-  // 월 데이터 없으면 종료
-
-  if(!monthlyStats[lastMonthKey]){
+  if(!lastMonthKey){
 
     lastMonthKey =
     currentMonth;
 
     localStorage.setItem(
       "lastMonthKey",
-      lastMonthKey
+      currentMonth
     );
 
     return;
 
   }
 
-  // 정산 금액 저장
-
-  const settledPay =
-  monthlyPay;
-
-const stats =
-monthlyStats[lastMonthKey];
-
-const evaluation =
-calculateEvaluation(stats);
-
-switch(evaluation){
-
-  case "A":
-
-    totalGold++;
-
-    break;
-
-  case "B":
-
-    totalSilver++;
-
-    break;
-
-  case "C":
-
-    totalBronze++;
-
-    break;
-
-}
-
-localStorage.setItem(
-  "totalGold",
-  totalGold
-);
-
-localStorage.setItem(
-  "totalSilver",
-  totalSilver
-);
-
-localStorage.setItem(
-  "totalBronze",
-  totalBronze
-);
-
-if(evaluation === "F"){
-
-  applyDemotion();
-
-}
-else{
-
-  isDemoted = false;
-
-  localStorage.setItem(
-    "isDemoted",
-    false
-  );
-
-  updatePosition();
-
-}
-
-let bonus = 0;
-
-switch(evaluation){
-
-  case "A":
-
-    bonus = 300000;
-
-    break;
-
-  case "B":
-
-    bonus = 200000;
-
-    break;
-
-  case "C":
-
-    bonus = 100000;
-
-    break;
-
-case "D":
-
-  bonus = 0;
-
-  break;
-
-case "F":
-
-  bonus = 0;
-
-  break;
-
-}
-
   // =========================
-  // 월급 정산
+  // 월 변경 감지
   // =========================
 
-  totalPay +=
-settledPay + bonus;
+  else if(
+    lastMonthKey !== currentMonth
+  ){
 
-  localStorage.setItem(
-    "totalPay",
-    totalPay
-  );
+    // 월 데이터 없으면 종료
 
-  // =========================
-  // 월간 초기화
-  // =========================
+    if(!monthlyStats[lastMonthKey]){
 
-  monthlySeconds = 0;
+      lastMonthKey =
+      currentMonth;
 
-  monthlyPay = 0;
+      localStorage.setItem(
+        "lastMonthKey",
+        lastMonthKey
+      );
 
-  lastMonthKey =
-  currentMonth;
+      return;
 
-  localStorage.setItem(
-    "monthlySeconds",
-    monthlySeconds
-  );
+    }
 
-  localStorage.setItem(
-    "monthlyPay",
-    monthlyPay
-  );
+    // =========================
+    // 평가 계산
+    // =========================
 
-  localStorage.setItem(
-    "lastMonthKey",
-    lastMonthKey
-  );
+    const settledPay =
+    monthlyPay;
 
-  // =========================
-  // 월급 정산 알림
-  // =========================
+    const stats =
+    monthlyStats[lastMonthKey];
 
-  setTimeout(()=>{
+    const evaluation =
+    calculateEvaluation(stats);
 
-  showToast(
+    // =========================
+    // 메달 지급
+    // =========================
+
+    switch(evaluation){
+
+      case "A":
+
+        totalGold++;
+
+        break;
+
+      case "B":
+
+        totalSilver++;
+
+        break;
+
+      case "C":
+
+        totalBronze++;
+
+        break;
+
+    }
+
+    localStorage.setItem(
+      "totalGold",
+      totalGold
+    );
+
+    localStorage.setItem(
+      "totalSilver",
+      totalSilver
+    );
+
+    localStorage.setItem(
+      "totalBronze",
+      totalBronze
+    );
+
+    // =========================
+    // 강등 처리
+    // =========================
+
+    if(evaluation === "F"){
+
+      applyDemotion();
+
+    }
+
+    else{
+
+      isDemoted = false;
+
+      localStorage.setItem(
+        "isDemoted",
+        false
+      );
+
+      updatePosition();
+
+    }
+
+    // =========================
+    // 성과급 계산
+    // =========================
+
+    let bonus = 0;
+
+    switch(evaluation){
+
+      case "A":
+
+        bonus = 300000;
+
+        break;
+
+      case "B":
+
+        bonus = 200000;
+
+        break;
+
+      case "C":
+
+        bonus = 100000;
+
+        break;
+
+      case "D":
+
+      case "F":
+
+        bonus = 0;
+
+        break;
+
+    }
+
+    // =========================
+    // 월급 정산
+    // =========================
+
+    totalPay +=
+    settledPay + bonus;
+
+    localStorage.setItem(
+      "totalPay",
+      totalPay
+    );
+
+    // =========================
+    // 기록 저장
+    // =========================
+
+    saveMonthlyHistory(
+      lastMonthKey,
+      evaluation,
+      `+${bonus.toLocaleString()}원`
+    );
+
+    saveBonusHistory(
+      lastMonthKey,
+      `+${bonus.toLocaleString()}원`
+    );
+
+    // =========================
+    // 월간 초기화
+    // =========================
+
+    monthlySeconds = 0;
+
+    monthlyPay = 0;
+
+    lastMonthKey =
+    currentMonth;
+
+    localStorage.setItem(
+      "monthlySeconds",
+      monthlySeconds
+    );
+
+    localStorage.setItem(
+      "monthlyPay",
+      monthlyPay
+    );
+
+    localStorage.setItem(
+      "lastMonthKey",
+      lastMonthKey
+    );
+
+    // =========================
+    // UI 갱신
+    // =========================
+
+    updateTotalInfo();
+
+    renderMonthlyHistory();
+
+    renderBonusHistory();
+
+    renderPositionInfo();
+
+    // =========================
+    // 정산 알림
+    // =========================
+
+    setTimeout(()=>{
+
+      showToast(
 `이번 달 급여가 정산되었습니다.
 
 급여
@@ -967,13 +1021,11 @@ settledPay + bonus;
 
 성과급
 +${bonus.toLocaleString()}원`
-  );
+      );
 
-  updateTotalInfo();
+    },1000);
 
-},1000);
-
-}
+  }
 
 }
 
@@ -983,11 +1035,37 @@ settledPay + bonus;
 
 function getWorkedSecondsV2(){
 
-  return (
-    (hour * 3600) +
-    (minute * 60) +
-    second
+  // 근무중 아니면 0
+
+  if(
+    !isWorking
+    ||
+    !workStartTimestamp
+  ){
+
+    return 0;
+
+  }
+
+  // 현재 시간
+
+  const now =
+  Date.now();
+
+  // 실제 경과 초
+
+  const workedSeconds =
+  Math.floor(
+    (now - workStartTimestamp)
+    / 1000
   );
+
+  return Math.max(
+  workedSeconds
+  -
+  totalBreakSeconds,
+  0
+);
 
 }
 
@@ -1122,21 +1200,6 @@ function calculatePay(seconds){
   );
 
 }
-
-// =========================
-// 월말평가 기록 저장
-// =========================
-
-saveMonthlyHistory(
-  lastMonthKey,
-  evaluation,
-  `+${bonus.toLocaleString()}원`
-);
-
-saveBonusHistory(
-  lastMonthKey,
-  `+${bonus.toLocaleString()}원`
-);
 
 // =========================
 // 숫자 카운트 애니메이션

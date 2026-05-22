@@ -104,122 +104,6 @@ if(isWorking){
 
 }
 
-if(isWorking && workStartTimestamp){
-
-  const now =
-  Date.now();
-
-  const diffSeconds =
-  Math.floor(
-    (now - workStartTimestamp)
-    / 1000
-  );
-
-  hour =
-  Math.floor(
-    diffSeconds / 3600
-  );
-
-  minute =
-  Math.floor(
-    (diffSeconds % 3600) / 60
-  );
-
-  second =
-  diffSeconds % 60;
-
-  updateWorkUI();
-
-}
-
-// =========================
-// 휴식 복원
-// =========================
-
-if(isResting && !restUsed){
-
-  restBtn.textContent =
-  "휴식 종료";
-
-  restTimer = setInterval(()=>{
-
-    restSeconds--;
-
-    updateRestUI();
-
-    saveState();
-
-    if(restSeconds <= 0){
-
-      endRest();
-
-      showToast(
-        "휴식이 종료되었습니다."
-      );
-
-    }
-
-  },1000);
-
-}
-
-// =========================
-// 점심 복원
-// =========================
-
-if(isLunch){
-
-  lunchBtn.textContent =
-  "점심 종료";
-
-  lunchTimer = setInterval(()=>{
-
-    lunchSeconds--;
-
-    updateLunchUI();
-
-    saveState();
-
-    if(lunchSeconds <= 0){
-
-      endLunch();
-
-      showToast(
-        "점심시간이 종료되었습니다."
-      );
-
-    }
-
-  },1000);
-
-}
-
-// =========================
-// 자리비움 복원
-// =========================
-
-if(isAway){
-
-  awayTimer = setInterval(()=>{
-
-    awaySeconds--;
-
-    updateAwayUI();
-
-    saveState();
-
-    if(awaySeconds <= 0){
-
-      clearInterval(
-        awayTimer
-      );
-
-    }
-
-  },1000);
-
-}
-
 }
 
 // =========================
@@ -267,5 +151,21 @@ if(savedProfileImage){
 
   officeDefaultProfileIcon.style.display =
   "none";
+
+}
+
+// =========================
+// 오늘의 목표
+// =========================
+
+const savedGoalMemo =
+localStorage.getItem(
+  "goalMemo"
+);
+
+if(savedGoalMemo){
+
+  goalMemoText.textContent =
+  savedGoalMemo;
 
 }
