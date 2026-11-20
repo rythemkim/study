@@ -1,0 +1,184 @@
+/* =========================
+   화면 전환 애니메이션
+========================= */
+
+.screen{
+
+  animation:fadeIn .25s ease;
+
+}
+
+@keyframes fadeIn{
+
+  from{
+
+    opacity:0;
+    transform:translateY(8px);
+
+  }
+
+  to{
+
+    opacity:1;
+    transform:translateY(0);
+
+  }
+
+}
+
+/* =========================
+   버튼 터치 효과
+========================= */
+
+button{
+
+  transition:
+  transform .12s ease,
+  opacity .2s ease;
+
+}
+
+button:active{
+
+  transform:scale(0.96);
+
+}
+
+.working-badge,
+.office-state{
+
+  transition:
+  background .25s ease,
+  color .25s ease;
+
+}
+
+/* =========================
+   카드 애니메이션
+========================= */
+
+.attendance-item,
+.store-product-card,
+.office-profile-card,
+.summary-card,
+.detail-panel{
+
+  transition:
+  transform .18s ease,
+  box-shadow .18s ease;
+
+}
+
+.attendance-item:active,
+.store-product-card:active{
+
+  transform:scale(0.98);
+
+}
+
+.store-product-card:hover,
+.office-profile-card:hover{
+
+  transform:translateY(-2px);
+
+}
+
+.store-product-card{
+
+  transition:
+  0.35s ease;
+
+}
+
+/* =========================
+   Toast
+========================= */
+
+#toast{
+
+  position:fixed;
+
+  left:50%;
+  bottom:90px;
+
+  transform:
+  translateX(-50%)
+  translateY(20px);
+
+  background:#1f1f1f;
+  color:white;
+
+  padding:14px 20px;
+
+  border-radius:14px;
+
+  font-size:14px;
+  font-weight:600;
+
+  white-space:nowrap;
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:
+  opacity .25s ease,
+  transform .25s ease;
+
+  z-index:9999;
+
+max-width:90%;
+overflow:hidden;
+text-overflow:ellipsis;
+
+}
+
+/* 활성화 */
+
+#toast.show{
+
+  opacity:1;
+
+  transform:
+  translateX(-50%)
+  translateY(0);
+
+}
+
+/* =========================
+   하단 탭 애니메이션
+========================= */
+
+.nav-item{
+
+  transition:
+  transform .18s ease,
+  opacity .18s ease,
+  color .18s ease;
+
+}
+
+/* 활성 탭 */
+
+.nav-item.active{
+
+  transform:translateY(-4px);
+
+}
+
+/* 아이콘 */
+
+.nav-item i{
+
+  transition:
+  transform .18s ease;
+
+}
+
+/* 활성 아이콘 */
+
+.nav-item.active i{
+
+  transform:scale(1.12);
+
+}
